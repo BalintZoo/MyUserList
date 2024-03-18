@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Users-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="MyUserList" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wu1-vf-PhF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wu1-vf-PhF">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="80" id="QGJ-3i-ImE" customClass="UserTableViewCell" customModule="MyUserList" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" id="QGJ-3i-ImE" customClass="UserTableViewCell" customModule="MyUserList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QGJ-3i-ImE" id="Mee-0f-WVX">
@@ -31,7 +31,7 @@
                                                     <rect key="frame" x="10" y="10" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="uyC-mQ-60L" secondAttribute="height" multiplier="1:1" id="i21-Z1-Mmy"/>
-                                                        <constraint firstAttribute="width" constant="60" id="wUT-JX-9N5"/>
+                                                        <constraint firstAttribute="width" constant="60" id="nRA-7S-EeS"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -63,9 +63,9 @@
                                                 <constraint firstItem="uyC-mQ-60L" firstAttribute="top" secondItem="Mee-0f-WVX" secondAttribute="top" constant="10" id="5Ja-qI-aDi"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="L7o-dH-bUG" secondAttribute="trailing" constant="10" id="CQ5-3G-c2c"/>
                                                 <constraint firstItem="L7o-dH-bUG" firstAttribute="leading" secondItem="uyC-mQ-60L" secondAttribute="trailing" constant="10" id="Nxx-E9-mL5"/>
+                                                <constraint firstAttribute="bottom" secondItem="uyC-mQ-60L" secondAttribute="bottom" constant="10" id="R3T-1W-wPy"/>
                                                 <constraint firstItem="8IF-ob-vah" firstAttribute="top" secondItem="Mee-0f-WVX" secondAttribute="topMargin" id="VOA-id-cYz"/>
                                                 <constraint firstItem="uyC-mQ-60L" firstAttribute="leading" secondItem="Mee-0f-WVX" secondAttribute="leading" constant="10" id="WdF-fy-pOu"/>
-                                                <constraint firstAttribute="bottom" secondItem="uyC-mQ-60L" secondAttribute="bottom" constant="10" id="dcc-oj-jRv"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="8IF-ob-vah" secondAttribute="trailing" constant="10" id="q8P-Hb-h1U"/>
                                                 <constraint firstItem="8IF-ob-vah" firstAttribute="leading" secondItem="uyC-mQ-60L" secondAttribute="trailing" constant="10" id="vuG-9Q-WH0"/>
                                             </constraints>
@@ -93,7 +93,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wu1-vf-PhF" secondAttribute="bottom" id="yTY-sy-Cfi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Users" id="HD8-en-0d4"/>
+                    <navigationItem key="navigationItem" id="HD8-en-0d4"/>
                     <connections>
                         <outlet property="activityIndicator" destination="LKi-el-pq5" id="Nha-G5-Pxf"/>
                         <outlet property="tableView" destination="wu1-vf-PhF" id="fcc-Bw-toH"/>

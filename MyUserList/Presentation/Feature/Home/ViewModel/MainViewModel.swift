@@ -14,6 +14,7 @@ class MainViewModel {
     public let users : PublishSubject<[UserViewData]> = PublishSubject()
     public let error : PublishSubject<UserDataError> = PublishSubject()
     public let loading: PublishSubject<Bool> = PublishSubject()
+    
     private let disposable = DisposeBag()
     
     private let getUserListUseCase: GetUserListUseCaseProtocol
@@ -46,7 +47,7 @@ class MainViewModel {
     ///also in case of changes on backend or UI side the code to modify is less
     private func convertToViewData(userList: [User]) -> [UserViewData] {
         return userList.map({ user in
-            return UserViewData(imageUrl: user.avatar,
+            UserViewData(imageUrl: user.avatar,
                                 fullName: "\(user.firstName) \(user.lastName)",
                                 email: user.email)
         })

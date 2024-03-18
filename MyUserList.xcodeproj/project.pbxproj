@@ -13,13 +13,19 @@
 		900EA3562BA6E601000D59EA /* GetUserListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3552BA6E601000D59EA /* GetUserListUseCase.swift */; };
 		900EA3582BA6E635000D59EA /* UserListDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3572BA6E635000D59EA /* UserListDataSourceImpl.swift */; };
 		900EA35B2BA824DE000D59EA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA35A2BA824DE000D59EA /* UIViewController+Extensions.swift */; };
+		902530352BA86E82007821D3 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 902530342BA86E82007821D3 /* RxBlocking */; };
+		902530372BA86E82007821D3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 902530362BA86E82007821D3 /* RxCocoa */; };
+		902530392BA86E82007821D3 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 902530382BA86E82007821D3 /* RxRelay */; };
+		9025303B2BA86E82007821D3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9025303A2BA86E82007821D3 /* RxSwift */; };
+		9025303D2BA86E82007821D3 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 9025303C2BA86E82007821D3 /* RxTest */; };
+		902530402BA8931D007821D3 /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025303F2BA8931D007821D3 /* TestConstants.swift */; };
 		908187F02BA34FCD00497258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908187EF2BA34FCD00497258 /* AppDelegate.swift */; };
 		908187F22BA34FCD00497258 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908187F12BA34FCD00497258 /* SceneDelegate.swift */; };
 		908187F42BA34FCD00497258 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908187F32BA34FCD00497258 /* MainViewController.swift */; };
 		908187F72BA34FCD00497258 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 908187F62BA34FCD00497258 /* Base */; };
 		908187F92BA34FCF00497258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908187F82BA34FCF00497258 /* Assets.xcassets */; };
 		908187FC2BA34FCF00497258 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 908187FB2BA34FCF00497258 /* Base */; };
-		908188072BA34FCF00497258 /* MyUserListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908188062BA34FCF00497258 /* MyUserListTests.swift */; };
+		908188072BA34FCF00497258 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908188062BA34FCF00497258 /* MainViewModelTests.swift */; };
 		908188112BA34FCF00497258 /* MyUserListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908188102BA34FCF00497258 /* MyUserListUITests.swift */; };
 		908188132BA34FCF00497258 /* MyUserListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908188122BA34FCF00497258 /* MyUserListUITestsLaunchTests.swift */; };
 		908188232BA42E8E00497258 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908188222BA42E8E00497258 /* DetailsViewController.swift */; };
@@ -28,11 +34,12 @@
 		9081882E2BA4656300497258 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9081882D2BA4656300497258 /* MainViewModel.swift */; };
 		908188312BA46A5200497258 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 908188302BA46A5200497258 /* Alamofire */; };
 		908188332BA46AC500497258 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908188322BA46AC500497258 /* UserResponse.swift */; };
-		908188382BA4A40A00497258 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 908188372BA4A40A00497258 /* RxCocoa */; };
-		9081883A2BA4A40A00497258 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 908188392BA4A40A00497258 /* RxSwift */; };
 		9081883C2BA4A8FE00497258 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9081883B2BA4A8FE00497258 /* UserTableViewCell.swift */; };
 		90B3417E2BA843BF000DF15E /* UserDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B3417D2BA843BF000DF15E /* UserDataError.swift */; };
 		90B341812BA84420000DF15E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B341802BA84420000DF15E /* String+Extensions.swift */; };
+		90B341842BA84D51000DF15E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90B341822BA84D51000DF15E /* Localizable.strings */; };
+		90B341882BA85B64000DF15E /* MockGetUserListUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B341872BA85B64000DF15E /* MockGetUserListUseCases.swift */; };
+		90B3418B2BA85C5B000DF15E /* MockUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B3418A2BA85C5B000DF15E /* MockUserResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,7 @@
 		900EA3552BA6E601000D59EA /* GetUserListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserListUseCase.swift; sourceTree = "<group>"; };
 		900EA3572BA6E635000D59EA /* UserListDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataSourceImpl.swift; sourceTree = "<group>"; };
 		900EA35A2BA824DE000D59EA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		9025303F2BA8931D007821D3 /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		908187EC2BA34FCD00497258 /* MyUserList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyUserList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		908187EF2BA34FCD00497258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		908187F12BA34FCD00497258 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +76,7 @@
 		908187FB2BA34FCF00497258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		908187FD2BA34FCF00497258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		908188022BA34FCF00497258 /* MyUserListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyUserListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		908188062BA34FCF00497258 /* MyUserListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserListTests.swift; sourceTree = "<group>"; };
+		908188062BA34FCF00497258 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
 		9081880C2BA34FCF00497258 /* MyUserListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyUserListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		908188102BA34FCF00497258 /* MyUserListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserListUITests.swift; sourceTree = "<group>"; };
 		908188122BA34FCF00497258 /* MyUserListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserListUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -79,6 +87,9 @@
 		9081883B2BA4A8FE00497258 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		90B3417D2BA843BF000DF15E /* UserDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataError.swift; sourceTree = "<group>"; };
 		90B341802BA84420000DF15E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		90B341832BA84D51000DF15E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		90B341872BA85B64000DF15E /* MockGetUserListUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetUserListUseCases.swift; sourceTree = "<group>"; };
+		90B3418A2BA85C5B000DF15E /* MockUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +97,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				908188382BA4A40A00497258 /* RxCocoa in Frameworks */,
+				902530372BA86E82007821D3 /* RxCocoa in Frameworks */,
 				908188312BA46A5200497258 /* Alamofire in Frameworks */,
-				9081883A2BA4A40A00497258 /* RxSwift in Frameworks */,
+				9025303B2BA86E82007821D3 /* RxSwift in Frameworks */,
+				902530392BA86E82007821D3 /* RxRelay in Frameworks */,
 				9081882C2BA43BC200497258 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9025303D2BA86E82007821D3 /* RxTest in Frameworks */,
+				902530352BA86E82007821D3 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +251,38 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		9025303E2BA8930B007821D3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				90B3418A2BA85C5B000DF15E /* MockUserResponse.swift */,
+				9025303F2BA8931D007821D3 /* TestConstants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		902530412BA893A9007821D3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				908188062BA34FCF00497258 /* MainViewModelTests.swift */,
+				90B341872BA85B64000DF15E /* MockGetUserListUseCases.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		902530422BA893BE007821D3 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		902530432BA893CD007821D3 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		908187E32BA34FCD00497258 = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +316,7 @@
 				908187F82BA34FCF00497258 /* Assets.xcassets */,
 				908187FA2BA34FCF00497258 /* LaunchScreen.storyboard */,
 				908187FD2BA34FCF00497258 /* Info.plist */,
+				90B341822BA84D51000DF15E /* Localizable.strings */,
 			);
 			path = MyUserList;
 			sourceTree = "<group>";
@@ -277,7 +324,8 @@
 		908188052BA34FCF00497258 /* MyUserListTests */ = {
 			isa = PBXGroup;
 			children = (
-				908188062BA34FCF00497258 /* MyUserListTests.swift */,
+				9025303E2BA8930B007821D3 /* Common */,
+				90B341852BA85A88000DF15E /* Home */,
 			);
 			path = MyUserListTests;
 			sourceTree = "<group>";
@@ -326,6 +374,16 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		90B341852BA85A88000DF15E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				902530412BA893A9007821D3 /* ViewModel */,
+				902530422BA893BE007821D3 /* UseCase */,
+				902530432BA893CD007821D3 /* DataSource */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,8 +403,9 @@
 			packageProductDependencies = (
 				9081882B2BA43BC200497258 /* Kingfisher */,
 				908188302BA46A5200497258 /* Alamofire */,
-				908188372BA4A40A00497258 /* RxCocoa */,
-				908188392BA4A40A00497258 /* RxSwift */,
+				902530362BA86E82007821D3 /* RxCocoa */,
+				902530382BA86E82007821D3 /* RxRelay */,
+				9025303A2BA86E82007821D3 /* RxSwift */,
 			);
 			productName = MyUserList;
 			productReference = 908187EC2BA34FCD00497258 /* MyUserList.app */;
@@ -366,6 +425,10 @@
 				908188042BA34FCF00497258 /* PBXTargetDependency */,
 			);
 			name = MyUserListTests;
+			packageProductDependencies = (
+				902530342BA86E82007821D3 /* RxBlocking */,
+				9025303C2BA86E82007821D3 /* RxTest */,
+			);
 			productName = MyUserListTests;
 			productReference = 908188022BA34FCF00497258 /* MyUserListTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -423,7 +486,7 @@
 			packageReferences = (
 				9081882A2BA43BC200497258 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				9081882F2BA46A5200497258 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				908188362BA4A40A00497258 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				902530332BA86E82007821D3 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 908187ED2BA34FCD00497258 /* Products */;
 			projectDirPath = "";
@@ -442,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				908187F92BA34FCF00497258 /* Assets.xcassets in Resources */,
+				90B341842BA84D51000DF15E /* Localizable.strings in Resources */,
 				908187FC2BA34FCF00497258 /* Base in Resources */,
 				908187F72BA34FCD00497258 /* Base in Resources */,
 			);
@@ -491,7 +555,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				908188072BA34FCF00497258 /* MyUserListTests.swift in Sources */,
+				90B341882BA85B64000DF15E /* MockGetUserListUseCases.swift in Sources */,
+				908188072BA34FCF00497258 /* MainViewModelTests.swift in Sources */,
+				90B3418B2BA85C5B000DF15E /* MockUserResponse.swift in Sources */,
+				902530402BA8931D007821D3 /* TestConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +603,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		90B341822BA84D51000DF15E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90B341832BA84D51000DF15E /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -576,6 +651,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -639,6 +715,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -673,6 +751,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -701,6 +780,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -832,6 +912,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		902530332BA86E82007821D3 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		9081882A2BA43BC200497258 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -848,17 +936,34 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		908188362BA4A40A00497258 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		902530342BA86E82007821D3 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 902530332BA86E82007821D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		902530362BA86E82007821D3 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 902530332BA86E82007821D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		902530382BA86E82007821D3 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 902530332BA86E82007821D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		9025303A2BA86E82007821D3 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 902530332BA86E82007821D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		9025303C2BA86E82007821D3 /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 902530332BA86E82007821D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
 		9081882B2BA43BC200497258 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9081882A2BA43BC200497258 /* XCRemoteSwiftPackageReference "Kingfisher" */;
@@ -868,16 +973,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9081882F2BA46A5200497258 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		908188372BA4A40A00497258 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 908188362BA4A40A00497258 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		908188392BA4A40A00497258 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 908188362BA4A40A00497258 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

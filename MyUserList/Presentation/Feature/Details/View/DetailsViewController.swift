@@ -28,7 +28,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Details"
+        navigationItem.title = "details".localized
         fullName.text = userDetails.fullName
         email.text = userDetails.email
         userImageView.kf.setImage(with: userDetails.imageUrl)

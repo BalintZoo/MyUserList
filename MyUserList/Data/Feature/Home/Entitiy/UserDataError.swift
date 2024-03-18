@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum UserDataError: Error {
+enum UserDataError: Error, Equatable {
     case generalError
     case noLocalUsers
     case networkError(String)

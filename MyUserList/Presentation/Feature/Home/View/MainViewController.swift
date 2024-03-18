@@ -28,6 +28,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "users".localized
+        
         setupBindings()
         
         homeViewModel.requestUserList()
@@ -70,11 +72,11 @@ class MainViewController: UIViewController {
                 guard let self = self else { return }
                 switch error {
                 case .generalError:
-                    self.showAlertMessage(title: "Error", message: "Something went wrong, please try again")
+                    self.showAlertMessage(title: "error".localized, message: "general_error".localized)
                 case .networkError(let errorMessage):
-                    self.showAlertMessage(title: "Error", message: errorMessage)
+                    self.showAlertMessage(title: "error".localized, message: errorMessage)
                 case .noLocalUsers:
-                    self.showAlertMessage(title: "Error", message: "Unable to load local user list. Please make sure you have a working internet connection and try again")
+                    self.showAlertMessage(title: "error".localized, message: "no_local_data".localized)
                 }
             })
             .disposed(by: disposeBag)
