@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 struct UserResponse: Codable {
     let page: Int
     let perPage: Int

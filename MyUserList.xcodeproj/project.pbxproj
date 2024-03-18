@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		900EA3492BA6E290000D59EA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3482BA6E290000D59EA /* NetworkManager.swift */; };
-		900EA34B2BA6E2A6000D59EA /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA34A2BA6E2A6000D59EA /* LocalStorageManager.swift */; };
+		900EA3492BA6E290000D59EA /* UsersRemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3482BA6E290000D59EA /* UsersRemoteStorage.swift */; };
+		900EA34B2BA6E2A6000D59EA /* UsersLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA34A2BA6E2A6000D59EA /* UsersLocalStorage.swift */; };
 		900EA3542BA6E52B000D59EA /* UserListDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3532BA6E52B000D59EA /* UserListDataSourceProtocol.swift */; };
 		900EA3562BA6E601000D59EA /* GetUserListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3552BA6E601000D59EA /* GetUserListUseCase.swift */; };
-		900EA3582BA6E635000D59EA /* UserListRemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3572BA6E635000D59EA /* UserListRemoteDataSourceImpl.swift */; };
+		900EA3582BA6E635000D59EA /* UserListDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3572BA6E635000D59EA /* UserListDataSourceImpl.swift */; };
+		900EA35B2BA824DE000D59EA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA35A2BA824DE000D59EA /* UIViewController+Extensions.swift */; };
 		908187F02BA34FCD00497258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908187EF2BA34FCD00497258 /* AppDelegate.swift */; };
 		908187F22BA34FCD00497258 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908187F12BA34FCD00497258 /* SceneDelegate.swift */; };
 		908187F42BA34FCD00497258 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908187F32BA34FCD00497258 /* MainViewController.swift */; };
@@ -30,6 +31,8 @@
 		908188382BA4A40A00497258 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 908188372BA4A40A00497258 /* RxCocoa */; };
 		9081883A2BA4A40A00497258 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 908188392BA4A40A00497258 /* RxSwift */; };
 		9081883C2BA4A8FE00497258 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9081883B2BA4A8FE00497258 /* UserTableViewCell.swift */; };
+		90B3417E2BA843BF000DF15E /* UserDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B3417D2BA843BF000DF15E /* UserDataError.swift */; };
+		90B341812BA84420000DF15E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B341802BA84420000DF15E /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,11 +53,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		900EA3482BA6E290000D59EA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		900EA34A2BA6E2A6000D59EA /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
+		900EA3482BA6E290000D59EA /* UsersRemoteStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteStorage.swift; sourceTree = "<group>"; };
+		900EA34A2BA6E2A6000D59EA /* UsersLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalStorage.swift; sourceTree = "<group>"; };
 		900EA3532BA6E52B000D59EA /* UserListDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataSourceProtocol.swift; sourceTree = "<group>"; };
 		900EA3552BA6E601000D59EA /* GetUserListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserListUseCase.swift; sourceTree = "<group>"; };
-		900EA3572BA6E635000D59EA /* UserListRemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRemoteDataSourceImpl.swift; sourceTree = "<group>"; };
+		900EA3572BA6E635000D59EA /* UserListDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataSourceImpl.swift; sourceTree = "<group>"; };
+		900EA35A2BA824DE000D59EA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		908187EC2BA34FCD00497258 /* MyUserList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyUserList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		908187EF2BA34FCD00497258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		908187F12BA34FCD00497258 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 		9081882D2BA4656300497258 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		908188322BA46AC500497258 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		9081883B2BA4A8FE00497258 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		90B3417D2BA843BF000DF15E /* UserDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataError.swift; sourceTree = "<group>"; };
+		90B341802BA84420000DF15E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				900EA34D2BA6E458000D59EA /* Entitiy */,
-				900EA3572BA6E635000D59EA /* UserListRemoteDataSourceImpl.swift */,
+				900EA3572BA6E635000D59EA /* UserListDataSourceImpl.swift */,
+				900EA3482BA6E290000D59EA /* UsersRemoteStorage.swift */,
+				900EA34A2BA6E2A6000D59EA /* UsersLocalStorage.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				908188322BA46AC500497258 /* UserResponse.swift */,
+				90B3417D2BA843BF000DF15E /* UserDataError.swift */,
 			);
 			path = Entitiy;
 			sourceTree = "<group>";
@@ -213,6 +222,21 @@
 			path = Contract;
 			sourceTree = "<group>";
 		};
+		900EA3592BA824BD000D59EA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				900EA35A2BA824DE000D59EA /* UIViewController+Extensions.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		900EA35C2BA8373C000D59EA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		908187E32BA34FCD00497258 = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +260,7 @@
 		908187EE2BA34FCD00497258 /* MyUserList */ = {
 			isa = PBXGroup;
 			children = (
+				90B3417F2BA8440F000DF15E /* Common */,
 				908188262BA4325E00497258 /* Data */,
 				908188272BA4326700497258 /* Domain */,
 				908188242BA431FA00497258 /* Presentation */,
@@ -269,6 +294,7 @@
 		908188242BA431FA00497258 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				900EA3592BA824BD000D59EA /* Common */,
 				900EA34E2BA6E46E000D59EA /* Feature */,
 			);
 			path = Presentation;
@@ -277,9 +303,8 @@
 		908188262BA4325E00497258 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				900EA35C2BA8373C000D59EA /* CoreData */,
 				900EA34F2BA6E47E000D59EA /* Feature */,
-				900EA3482BA6E290000D59EA /* NetworkManager.swift */,
-				900EA34A2BA6E2A6000D59EA /* LocalStorageManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -291,6 +316,14 @@
 				900EA3502BA6E496000D59EA /* Feature */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		90B3417F2BA8440F000DF15E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				90B341802BA84420000DF15E /* String+Extensions.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,14 +470,17 @@
 			files = (
 				900EA3542BA6E52B000D59EA /* UserListDataSourceProtocol.swift in Sources */,
 				908187F42BA34FCD00497258 /* MainViewController.swift in Sources */,
-				900EA34B2BA6E2A6000D59EA /* LocalStorageManager.swift in Sources */,
+				900EA34B2BA6E2A6000D59EA /* UsersLocalStorage.swift in Sources */,
 				900EA3562BA6E601000D59EA /* GetUserListUseCase.swift in Sources */,
+				90B341812BA84420000DF15E /* String+Extensions.swift in Sources */,
 				908187F02BA34FCD00497258 /* AppDelegate.swift in Sources */,
 				908187F22BA34FCD00497258 /* SceneDelegate.swift in Sources */,
 				908188232BA42E8E00497258 /* DetailsViewController.swift in Sources */,
 				9081883C2BA4A8FE00497258 /* UserTableViewCell.swift in Sources */,
-				900EA3492BA6E290000D59EA /* NetworkManager.swift in Sources */,
-				900EA3582BA6E635000D59EA /* UserListRemoteDataSourceImpl.swift in Sources */,
+				900EA3492BA6E290000D59EA /* UsersRemoteStorage.swift in Sources */,
+				900EA3582BA6E635000D59EA /* UserListDataSourceImpl.swift in Sources */,
+				900EA35B2BA824DE000D59EA /* UIViewController+Extensions.swift in Sources */,
+				90B3417E2BA843BF000DF15E /* UserDataError.swift in Sources */,
 				908188292BA436AC00497258 /* UserViewData.swift in Sources */,
 				908188332BA46AC500497258 /* UserResponse.swift in Sources */,
 				9081882E2BA4656300497258 /* MainViewModel.swift in Sources */,
