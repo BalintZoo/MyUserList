@@ -33,6 +33,11 @@
                                                         <constraint firstAttribute="height" constant="60" id="OgB-Ts-8pn"/>
                                                         <constraint firstAttribute="width" constant="60" id="wUT-JX-9N5"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IF-ob-vah">
                                                     <rect key="frame" x="80" y="11" width="200" height="21"/>
@@ -40,7 +45,7 @@
                                                         <constraint firstAttribute="width" constant="200" id="46G-gl-s5W"/>
                                                         <constraint firstAttribute="height" constant="21" id="P2f-jG-puz"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -50,7 +55,7 @@
                                                         <constraint firstAttribute="width" constant="200" id="bT5-2r-fAE"/>
                                                         <constraint firstAttribute="height" constant="21" id="ytc-ed-9Iw"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -101,20 +106,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="blc-Nr-vh2">
-                                <rect key="frame" x="111.33333333333333" y="79.000000000000014" width="170.33333333333343" height="170.33333333333337"/>
+                                <rect key="frame" x="90" y="79" width="213" height="213"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="blc-Nr-vh2" secondAttribute="height" multiplier="1:1" id="b9V-h9-W7w"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pe-ub-GlS">
-                                <rect key="frame" x="19.666666666666657" y="279.33333333333331" width="353.66666666666674" height="24"/>
+                                <rect key="frame" x="19.666666666666657" y="322" width="353.66666666666674" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCX-Nw-fBY">
-                                <rect key="frame" x="174.66666666666666" y="323.33333333333331" width="43.666666666666657" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <rect key="frame" x="174" y="366" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -125,13 +135,16 @@
                             <constraint firstItem="RCX-Nw-fBY" firstAttribute="centerX" secondItem="fV3-ZR-w6w" secondAttribute="centerX" id="LNq-YV-M1a"/>
                             <constraint firstItem="blc-Nr-vh2" firstAttribute="top" secondItem="fV3-ZR-w6w" secondAttribute="top" constant="20" id="Qfe-vJ-4Yo"/>
                             <constraint firstItem="RCX-Nw-fBY" firstAttribute="top" secondItem="9pe-ub-GlS" secondAttribute="bottom" constant="20" id="ZHI-wB-sKN"/>
-                            <constraint firstItem="blc-Nr-vh2" firstAttribute="height" secondItem="8Kw-Gj-XHj" secondAttribute="height" multiplier="0.2" id="brH-pf-Oer"/>
+                            <constraint firstItem="blc-Nr-vh2" firstAttribute="height" secondItem="8Kw-Gj-XHj" secondAttribute="height" multiplier="0.25" id="brH-pf-Oer"/>
                             <constraint firstItem="9pe-ub-GlS" firstAttribute="width" secondItem="8Kw-Gj-XHj" secondAttribute="width" multiplier="0.9" id="c2h-HP-Ueo"/>
                             <constraint firstItem="9pe-ub-GlS" firstAttribute="centerX" secondItem="fV3-ZR-w6w" secondAttribute="centerX" id="d1J-sU-cqz"/>
                             <constraint firstItem="9pe-ub-GlS" firstAttribute="top" secondItem="blc-Nr-vh2" secondAttribute="bottom" constant="30" id="v4x-TC-OTh"/>
                             <constraint firstItem="blc-Nr-vh2" firstAttribute="centerX" secondItem="fV3-ZR-w6w" secondAttribute="centerX" id="xMw-jx-Khp"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="email" destination="RCX-Nw-fBY" id="jqa-zE-SEP"/>
                         <outlet property="fullName" destination="9pe-ub-GlS" id="zqB-Fr-PVN"/>

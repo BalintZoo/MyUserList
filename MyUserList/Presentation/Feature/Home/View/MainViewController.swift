@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     let cellReuseIdentifier = "UserCell"
     
-    var homeViewModel = MainViewModel()
+    var homeViewModel = MainViewModel(getUserListUseCase: GetUserListUseCase(usersDataSource: UserListRemoteDataSourceImpl()))
     
     private let disposeBag = DisposeBag()
     

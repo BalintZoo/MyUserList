@@ -28,9 +28,10 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Details"
-        self.fullName.text = userDetails.fullName
-        self.email.text = userDetails.email
-        self.userImageView.kf.setImage(with: userDetails.imageUrl)
+        navigationItem.title = "Details"
+        fullName.text = userDetails.fullName
+        email.text = userDetails.email
+        userImageView.kf.setImage(with: userDetails.imageUrl)
+        
     }
 }
