@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9008CD3C2BA982AC00BB680D /* GetUserListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9008CD3A2BA982AC00BB680D /* GetUserListUseCaseTests.swift */; };
+		9008CD3E2BA9838D00BB680D /* MockUserListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9008CD3D2BA9838D00BB680D /* MockUserListDataSource.swift */; };
+		9008CD402BA98AD200BB680D /* UserListDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9008CD3F2BA98AD200BB680D /* UserListDataSourceTest.swift */; };
+		9008CD422BA9B9D900BB680D /* MockStorages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9008CD412BA9B9D900BB680D /* MockStorages.swift */; };
 		900EA3492BA6E290000D59EA /* UsersRemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3482BA6E290000D59EA /* UsersRemoteStorage.swift */; };
 		900EA34B2BA6E2A6000D59EA /* UsersLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA34A2BA6E2A6000D59EA /* UsersLocalStorage.swift */; };
 		900EA3542BA6E52B000D59EA /* UserListDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3532BA6E52B000D59EA /* UserListDataSourceProtocol.swift */; };
@@ -19,6 +23,7 @@
 		9025303B2BA86E82007821D3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9025303A2BA86E82007821D3 /* RxSwift */; };
 		9025303D2BA86E82007821D3 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 9025303C2BA86E82007821D3 /* RxTest */; };
 		902530402BA8931D007821D3 /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025303F2BA8931D007821D3 /* TestConstants.swift */; };
+		902530452BA9756F007821D3 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902530442BA9756F007821D3 /* UserDefaultsStorage.swift */; };
 		908187F02BA34FCD00497258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908187EF2BA34FCD00497258 /* AppDelegate.swift */; };
 		908187F22BA34FCD00497258 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908187F12BA34FCD00497258 /* SceneDelegate.swift */; };
 		908187F42BA34FCD00497258 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908187F32BA34FCD00497258 /* MainViewController.swift */; };
@@ -60,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9008CD3A2BA982AC00BB680D /* GetUserListUseCaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserListUseCaseTests.swift; sourceTree = "<group>"; };
+		9008CD3D2BA9838D00BB680D /* MockUserListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserListDataSource.swift; sourceTree = "<group>"; };
+		9008CD3F2BA98AD200BB680D /* UserListDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataSourceTest.swift; sourceTree = "<group>"; };
+		9008CD412BA9B9D900BB680D /* MockStorages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorages.swift; sourceTree = "<group>"; };
 		900EA3482BA6E290000D59EA /* UsersRemoteStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteStorage.swift; sourceTree = "<group>"; };
 		900EA34A2BA6E2A6000D59EA /* UsersLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalStorage.swift; sourceTree = "<group>"; };
 		900EA3532BA6E52B000D59EA /* UserListDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataSourceProtocol.swift; sourceTree = "<group>"; };
@@ -67,6 +76,7 @@
 		900EA3572BA6E635000D59EA /* UserListDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataSourceImpl.swift; sourceTree = "<group>"; };
 		900EA35A2BA824DE000D59EA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		9025303F2BA8931D007821D3 /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
+		902530442BA9756F007821D3 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		908187EC2BA34FCD00497258 /* MyUserList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyUserList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		908187EF2BA34FCD00497258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		908187F12BA34FCD00497258 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -244,13 +254,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		900EA35C2BA8373C000D59EA /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
 		9025303E2BA8930B007821D3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +275,8 @@
 		902530422BA893BE007821D3 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				9008CD3A2BA982AC00BB680D /* GetUserListUseCaseTests.swift */,
+				9008CD3D2BA9838D00BB680D /* MockUserListDataSource.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -279,6 +284,8 @@
 		902530432BA893CD007821D3 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				9008CD3F2BA98AD200BB680D /* UserListDataSourceTest.swift */,
+				9008CD412BA9B9D900BB680D /* MockStorages.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -351,7 +358,6 @@
 		908188262BA4325E00497258 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				900EA35C2BA8373C000D59EA /* CoreData */,
 				900EA34F2BA6E47E000D59EA /* Feature */,
 			);
 			path = Data;
@@ -370,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				90B341802BA84420000DF15E /* String+Extensions.swift */,
+				902530442BA9756F007821D3 /* UserDefaultsStorage.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -546,6 +553,7 @@
 				900EA35B2BA824DE000D59EA /* UIViewController+Extensions.swift in Sources */,
 				90B3417E2BA843BF000DF15E /* UserDataError.swift in Sources */,
 				908188292BA436AC00497258 /* UserViewData.swift in Sources */,
+				902530452BA9756F007821D3 /* UserDefaultsStorage.swift in Sources */,
 				908188332BA46AC500497258 /* UserResponse.swift in Sources */,
 				9081882E2BA4656300497258 /* MainViewModel.swift in Sources */,
 			);
@@ -559,6 +567,10 @@
 				908188072BA34FCF00497258 /* MainViewModelTests.swift in Sources */,
 				90B3418B2BA85C5B000DF15E /* MockUserResponse.swift in Sources */,
 				902530402BA8931D007821D3 /* TestConstants.swift in Sources */,
+				9008CD3E2BA9838D00BB680D /* MockUserListDataSource.swift in Sources */,
+				9008CD3C2BA982AC00BB680D /* GetUserListUseCaseTests.swift in Sources */,
+				9008CD402BA98AD200BB680D /* UserListDataSourceTest.swift in Sources */,
+				9008CD422BA9B9D900BB680D /* MockStorages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

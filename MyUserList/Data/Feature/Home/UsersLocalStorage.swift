@@ -15,16 +15,14 @@ protocol UsersLocalStorage {
 
 struct UsersLocalStorageImpl: UsersLocalStorage {
     
-    private let UsersKey = "UsersKey"
+    static let UsersKey = "UsersKey"
     
+    @UserDefaultStorage(key: UsersLocalStorageImpl.UsersKey, default: nil, store: UserDefaults.standard) var usersData: UserResponse?
+                        
     func getLocalUserList() -> Observable<UserResponse> {
-        let decoder = JSONDecoder()
-        if let usersJsonString = UserDefaults.standard.value(forKey: UsersKey) as? String,
-           let data = usersJsonString.data(using: .utf8),
-           let userListObject = try? decoder.decode(UserResponse.self, from: data)
-        {
+        if let usersData {
             return Observable.create { observer -> Disposable in
-                observer.onNext(userListObject)
+                observer.onNext(usersData)
                 return Disposables.create()
             }
         } else {
@@ -36,11 +34,6 @@ struct UsersLocalStorageImpl: UsersLocalStorage {
     }
     
     func saveUserList(users: UserResponse) {
-        let encoder = JSONEncoder()
-        if let data = try? encoder.encode(users) {
-            let jsonString = String(data: data, encoding: .utf8)
-            UserDefaults.standard.setValue(jsonString, forKey: UsersKey)
-            UserDefaults.standard.synchronize()
-        }
+        usersData = users
     }
 }

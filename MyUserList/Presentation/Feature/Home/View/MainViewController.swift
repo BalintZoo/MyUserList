@@ -54,7 +54,6 @@ class MainViewController: UIViewController {
             .bind(to: tableView.rx.items(cellIdentifier: cellReuseIdentifier)) { row, model, cell in
             if let userCell = cell as? UserTableViewCell {
                 userCell.nameLabel?.text = model.fullName
-                userCell.emailLabel?.text = model.email
                 userCell.userImageView?.kf.setImage(with: model.imageUrl)
             }
         }

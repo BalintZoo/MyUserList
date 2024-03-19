@@ -10,5 +10,5 @@
 "details" = "Details";
 
 "error" = "Error";
-"general_error" = "Something went wrong, please try again";
-"no_local_data" = "Unable to load local user list. Please make sure you have a working internet connection and try again";
+"general_error" = "Something went wrong, please try again.";
+"no_local_data" = "Unable to load local user list. Please make sure you have a working internet connection and try again.";
