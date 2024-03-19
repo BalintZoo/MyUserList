@@ -9,14 +9,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MainViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
-    let cellReuseIdentifier = "UserCell"
+    private let cellReuseIdentifier = "UserCell"
     
-    var homeViewModel = MainViewModel(getUserListUseCase:
+    private var homeViewModel = HomeViewModel(getUserListUseCase:
                                         GetUserListUseCase(usersDataSource:
                                                             UserListDataSourceImpl(remoteStorage: UsersRemoteStorageImpl(),
                                                                                    localStorage: UsersLocalStorageImpl())
@@ -40,12 +40,16 @@ class MainViewController: UIViewController {
         tableView.rx.modelSelected(UserViewData.self)
            .subscribe(onNext: { [weak self] model in
                guard let self = self else { return }
-               //Initialize details view controller fron storyboard with a custom initializer
+               
+               //Initialize details view controller from storyboard with a custom initializer
+               let detailsViewModel = DetailsViewModel(userData: model)
                if let detailsViewController = self.storyboard?.instantiateViewController(identifier: "DetailsViewControllerID",
-                                                                                         creator: { coder in DetailsViewController(userDetails: model, coder: coder) }
+                                                                                         creator: { coder in DetailsViewController(viewModel: detailsViewModel,
+                                                                                                                                   coder: coder) }
                ) as? DetailsViewController {
                    self.navigationController?.pushViewController(detailsViewController, animated: true)
                }
+               //-----------------------------------------------------------------------------
         }).disposed(by: disposeBag)
         
         homeViewModel

@@ -7,6 +7,7 @@
 
 import Foundation
 import Kingfisher
+import RxSwift
 import UIKit
 
 class DetailsViewController: UIViewController {
@@ -15,10 +16,12 @@ class DetailsViewController: UIViewController {
     @IBOutlet var fullName: UILabel!
     @IBOutlet var email: UILabel!
     
-    let userDetails: UserViewData
+    private let disposeBag = DisposeBag()
     
-    init?(userDetails: UserViewData, coder: NSCoder) {
-        self.userDetails = userDetails
+    let viewModel: DetailsViewModel
+    
+    init?(viewModel: DetailsViewModel, coder: NSCoder) {
+        self.viewModel = viewModel
         super.init(coder: coder)
     }
     
@@ -29,9 +32,13 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "details".localized
-        fullName.text = userDetails.fullName
-        email.text = userDetails.email
-        userImageView.kf.setImage(with: userDetails.imageUrl)
         
+        viewModel.user.subscribe { [weak self] userDetails in
+            guard let self = self else { return }
+            fullName.text = userDetails.fullName
+            email.text = userDetails.email
+            userImageView.kf.setImage(with: userDetails.imageUrl)
+        }
+        .disposed(by: disposeBag)
     }
 }

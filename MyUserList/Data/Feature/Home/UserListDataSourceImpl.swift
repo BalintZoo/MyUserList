@@ -10,8 +10,8 @@ import RxSwift
 
 struct UserListDataSourceImpl: UserListDataSourceProtocol {
     
-    let remoteStorage: UsersRemoteStorage
-    let localStorage: UsersLocalStorage
+    private let remoteStorage: UsersRemoteStorage
+    private let localStorage: UsersLocalStorage
     
     private let disposable = DisposeBag()
     

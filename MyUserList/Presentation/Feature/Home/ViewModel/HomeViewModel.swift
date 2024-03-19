@@ -9,7 +9,7 @@ import Alamofire
 import Foundation
 import RxSwift
 
-class MainViewModel {
+class HomeViewModel {
     //MARK: - Properties
     public let users : PublishSubject<[UserViewData]> = PublishSubject()
     public let error : PublishSubject<UserDataError> = PublishSubject()

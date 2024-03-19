@@ -34,19 +34,19 @@ final class MainViewModelTests: XCTestCase {
                                 email: user.email)
         }
         
-        let mainViewModel = MainViewModel(getUserListUseCase: SuccesGetUserUseCase())
+        let homeViewModel = HomeViewModel(getUserListUseCase: SuccesGetUserUseCase())
         
         let usersObserver = scheduler.createObserver([UserViewData].self)
-        mainViewModel.users
+        homeViewModel.users
             .bind(to: usersObserver)
             .disposed(by: disposeBag)
         
         let expectUsers = expectation(description:"users")
         
-        mainViewModel.requestUserList()
+        homeViewModel.requestUserList()
         scheduler.start()
         
-        mainViewModel.users.subscribe { users in
+        homeViewModel.users.subscribe { users in
             expectUsers.fulfill()
         }
         .disposed(by: disposeBag)
@@ -58,19 +58,19 @@ final class MainViewModelTests: XCTestCase {
     }
     
     func testRequestUserList_Fail() throws {
-        let mainViewModel = MainViewModel(getUserListUseCase: FailGetUserUseCase())
+        let homeViewModel = HomeViewModel(getUserListUseCase: FailGetUserUseCase())
         
         let errorObserver = scheduler.createObserver(UserDataError.self)
-        mainViewModel.error
+        homeViewModel.error
             .bind(to: errorObserver)
             .disposed(by: disposeBag)
         
         let expectError = expectation(description:"error")
         
-        mainViewModel.requestUserList()
+        homeViewModel.requestUserList()
         scheduler.start()
         
-        mainViewModel.error.subscribe { error in
+        homeViewModel.error.subscribe { error in
             expectError.fulfill()
         }
         .disposed(by: disposeBag)
@@ -82,19 +82,19 @@ final class MainViewModelTests: XCTestCase {
     }
     
     func testRequestUserList_Loading() {
-        let mainViewModel = MainViewModel(getUserListUseCase: SuccesGetUserUseCase())
+        let homeViewModel = HomeViewModel(getUserListUseCase: SuccesGetUserUseCase())
         
         let loadingObserver = scheduler.createObserver(Bool.self)
-        mainViewModel.loading
+        homeViewModel.loading
             .bind(to: loadingObserver)
             .disposed(by: disposeBag)
         
         let expectLoadingFalse = expectation(description:"loading false")
         
-        mainViewModel.requestUserList()
+        homeViewModel.requestUserList()
         scheduler.start()
         
-        mainViewModel.loading.subscribe { loading in
+        homeViewModel.loading.subscribe { loading in
             expectLoadingFalse.fulfill()
         }
         .disposed(by: disposeBag)
