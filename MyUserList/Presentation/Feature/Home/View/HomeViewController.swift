@@ -58,7 +58,9 @@ class HomeViewController: UIViewController {
             .bind(to: tableView.rx.items(cellIdentifier: cellReuseIdentifier)) { row, model, cell in
             if let userCell = cell as? UserTableViewCell {
                 userCell.nameLabel?.text = model.fullName
-                userCell.userImageView?.kf.setImage(with: model.imageUrl)
+                userCell.userImageView?.kf.setImage(with: model.imageUrl,
+                                                    placeholder: UIImage(named: "user"),
+                                                    options: [.cacheMemoryOnly])
             }
         }
         .disposed(by: disposeBag)

@@ -37,7 +37,9 @@ class DetailsViewController: UIViewController {
             guard let self = self else { return }
             fullName.text = userDetails.fullName
             email.text = userDetails.email
-            userImageView.kf.setImage(with: userDetails.imageUrl)
+            userImageView.kf.setImage(with: userDetails.imageUrl,
+                                      placeholder: UIImage(named: "user"),
+                                      options: [.cacheMemoryOnly])
         }
         .disposed(by: disposeBag)
     }
