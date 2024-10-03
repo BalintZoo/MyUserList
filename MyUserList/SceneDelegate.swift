@@ -58,7 +58,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if url.scheme == "de.evag" {
                 print("Handling redirect URL in SceneDelegate")
 
-                // Handle the redirect with OIDCLoginManager
                 LoginManager.shared.handleRedirect(url: url) { result in
                     switch result {
                     case .success(let token):

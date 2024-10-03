@@ -38,10 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            open url: URL,
            options: [UIApplication.OpenURLOptionsKey : Any] = [:]
        ) -> Bool {
-
-           // Check if the URL matches your redirect URL
            if url.scheme == "de.evag" {
-               // Handle the redirect
                LoginManager.shared.handleRedirect(url: url) { result in
                    switch result {
                    case .success(let token):

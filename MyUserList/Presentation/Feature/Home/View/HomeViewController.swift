@@ -100,6 +100,7 @@ class HomeViewController: UIViewController {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] (error) in
                 guard let self = self else { return }
+                // @BZ get rid of this switch by implementing localizederror
                 switch error {
                 case .generalError:
                     self.showAlertMessage(title: "error".localized, message: "general_error".localized)
