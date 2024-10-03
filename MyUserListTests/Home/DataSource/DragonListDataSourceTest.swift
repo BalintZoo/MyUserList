@@ -7,9 +7,9 @@
 
 import RxSwift
 import XCTest
-@testable import MyUserList
+@testable import Dragons
 
-final class UserListDataSourceTest: XCTestCase {
+final class DragonListDataSourceTest: XCTestCase {
 
     var disposeBag: DisposeBag!
 
@@ -24,11 +24,11 @@ final class UserListDataSourceTest: XCTestCase {
     }
 
     func testRemoteDataAvailable() throws {
-        let expectedData = UserResponse.mock()
+        let expectedData = Dragon.mock()
 
-        let dataSource = UserListDataSourceImpl(remoteStorage: SuccesUsersRemoteStorage(), localStorage: NoUsersInLocalStorage())
+        let dataSource = DragonListDataSourceImpl(remoteStorage: SuccesUsersRemoteStorage(), localStorage: NoUsersInLocalStorage())
         
-        let observable = dataSource.getUserList()
+        let observable = dataSource.getDragonList()
                 
         let expectation = XCTestExpectation(description: "users remote data received")
         _ = observable.subscribe(onNext: { users in
@@ -41,11 +41,11 @@ final class UserListDataSourceTest: XCTestCase {
     }
     
     func testRemoteDataNotAvailable_LocalDataAvailable() throws {
-        let expectedData = UserResponse.mock()
+        let expectedData = Dragon.mock()
 
-        let dataSource = UserListDataSourceImpl(remoteStorage: FailUsersRemoteStorage(), localStorage: SavedUsersInLocalStorage())
+        let dataSource = DragonListDataSourceImpl(remoteStorage: FailUsersRemoteStorage(), localStorage: SavedUsersInLocalStorage())
         
-        let observable = dataSource.getUserList()
+        let observable = dataSource.getDragonList()
                 
         let expectation = XCTestExpectation(description: "users local data received")
         _ = observable.subscribe(onNext: { users in
@@ -57,15 +57,15 @@ final class UserListDataSourceTest: XCTestCase {
     }
     
     func testRemoteDataNotAvailable_LocalDataNotAvailable() throws {
-        let dataSource = UserListDataSourceImpl(remoteStorage: FailUsersRemoteStorage(), localStorage: NoUsersInLocalStorage())
+        let dataSource = DragonListDataSourceImpl(remoteStorage: FailUsersRemoteStorage(), localStorage: NoUsersInLocalStorage())
         
-        let observable = dataSource.getUserList()
+        let observable = dataSource.getDragonList()
                 
         let expectation = XCTestExpectation(description: "no data received")
         _ = observable.subscribe(onNext: { users in
             
         }, onError: { error in
-            XCTAssertEqual(error as? UserDataError, .noLocalUsers)
+            XCTAssertEqual(error as? LocalDataError, .noLocalData)
             expectation.fulfill()
         })
                 

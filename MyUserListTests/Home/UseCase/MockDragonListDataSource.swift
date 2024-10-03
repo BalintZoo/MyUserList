@@ -1,19 +1,19 @@
 //
-//  MockHomeUseCase.swift
+//  MockUserListDataSource.swift
 //  MyUserListTests
 //
-//  Created by Zoltán Bálint on 18.03.2024.
+//  Created by Zoltán Bálint on 19.03.2024.
 //
 
 import Foundation
+@testable import Dragons
 import RxSwift
-@testable import MyUserList
 
-struct SuccesGetUserUseCase: GetUserListUseCaseProtocol {
-    func runCase() -> Observable<[User]> {
+struct SuccesDragonListDataSource: DragonListDataSourceProtocol {
+    func getDragonList() -> Observable<[Dragon]> {
         return Observable.create { observer -> Disposable in
             DispatchQueue.main.asyncAfter(deadline: .now() + TestConstants.defaultMockDelay) {
-                observer.onNext(UserResponse.mock().data)
+                observer.onNext(Dragon.mock())
                 observer.onCompleted()
             }
             return Disposables.create()
@@ -21,11 +21,11 @@ struct SuccesGetUserUseCase: GetUserListUseCaseProtocol {
     }
 }
 
-struct FailGetUserUseCase: GetUserListUseCaseProtocol {
-    func runCase() -> Observable<[User]> {
+struct FailDragonListDataSource: DragonListDataSourceProtocol {
+    func getDragonList() -> Observable<[Dragon]> {
         return Observable.create { observer -> Disposable in
             DispatchQueue.main.asyncAfter(deadline: .now() + TestConstants.defaultMockDelay) {
-                observer.onError(UserDataError.generalError)
+                observer.onError(LocalDataError.noLocalData)
                 observer.onCompleted()
             }
             return Disposables.create()

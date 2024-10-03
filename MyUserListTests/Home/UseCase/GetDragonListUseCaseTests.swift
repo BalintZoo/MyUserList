@@ -7,9 +7,9 @@
 
 import RxSwift
 import XCTest
-@testable import MyUserList
+@testable import Dragons
 
-final class GetUserListUseCaseTests: XCTestCase {
+final class GetDragonListUseCaseTests: XCTestCase {
 
     var disposeBag: DisposeBag!
 
@@ -24,9 +24,9 @@ final class GetUserListUseCaseTests: XCTestCase {
     }
 
     func testGetUserListUseCase_Succes() throws {
-        let expectedUsers = UserResponse.mock().data.sorted { $0.firstName < $1.firstName }
+        let expectedUsers = Dragon.mock().sorted { $0.name < $1.name }
 
-        let usecase = GetUserListUseCase(usersDataSource: SuccesUserListDataSource())
+        let usecase = GetDragonListUseCase(dragonsDataSource: SuccesDragonListDataSource())
         let observable = usecase.runCase()
                 
         let expectation = XCTestExpectation(description: "user list received")
@@ -40,7 +40,7 @@ final class GetUserListUseCaseTests: XCTestCase {
     }
     
     func testGetUserListUseCase_Fail() throws {
-        let usecase = GetUserListUseCase(usersDataSource: FailUserListDataSource())
+        let usecase = GetDragonListUseCase(dragonsDataSource: FailDragonListDataSource())
         
         let observable = usecase.runCase()
                 
@@ -48,7 +48,7 @@ final class GetUserListUseCaseTests: XCTestCase {
         _ = observable.subscribe(onNext: { userList in
             
         }, onError: { error in
-            XCTAssertEqual(error as? UserDataError, UserDataError.noLocalUsers)
+            XCTAssertEqual(error as? LocalDataError, LocalDataError.noLocalData)
             expectation.fulfill()
         })
                 

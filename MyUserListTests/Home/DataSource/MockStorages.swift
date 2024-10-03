@@ -6,14 +6,14 @@
 //
 
 import Foundation
-@testable import MyUserList
+@testable import Dragons
 import RxSwift
 
-struct SuccesUsersRemoteStorage: UsersRemoteStorage {
-    func fetchUsersFromNetwork() -> Observable<UserResponse> {
+struct SuccesUsersRemoteStorage: DragonsRemoteStorage {
+    func fetchDragonsFromNetwork() -> Observable<[Dragon]> {
         return Observable.create { observer -> Disposable in
             DispatchQueue.main.asyncAfter(deadline: .now() + TestConstants.defaultMockDelay) {
-                observer.onNext(UserResponse.mock())
+                observer.onNext(Dragon.mock())
                 observer.onCompleted()
             }
             return Disposables.create()
@@ -21,45 +21,45 @@ struct SuccesUsersRemoteStorage: UsersRemoteStorage {
     }
 }
 
-struct FailUsersRemoteStorage: UsersRemoteStorage {
-    func fetchUsersFromNetwork() -> Observable<UserResponse> {
+struct FailUsersRemoteStorage:DragonsRemoteStorage {
+    func fetchDragonsFromNetwork() -> Observable<[Dragon]> {
         return Observable.create { observer -> Disposable in
-            observer.onError(UserDataError.networkError(""))
+            observer.onError(LocalDataError.networkError(""))
             return Disposables.create()
         }
     }
 }
 
-struct SavedUsersInLocalStorage: UsersLocalStorage {
+struct SavedUsersInLocalStorage: DragonsLocalStorage {
                         
-    func getLocalUserList() -> Observable<UserResponse> {
+    func getLocalDragonList() -> Observable<[Dragon]> {
         return Observable.create { observer -> Disposable in
             DispatchQueue.main.asyncAfter(deadline: .now() + TestConstants.defaultMockDelay) {
-                observer.onNext(UserResponse.mock())
+                observer.onNext(Dragon.mock())
                 observer.onCompleted()
             }
             return Disposables.create()
         }
     }
     
-    func saveUserList(users: UserResponse) {
+    func saveDragonList(dragons: [Dragon]) {
         
     }
 }
 
-struct NoUsersInLocalStorage: UsersLocalStorage {
+struct NoUsersInLocalStorage: DragonsLocalStorage {
                         
-    func getLocalUserList() -> Observable<UserResponse> {
+    func getLocalDragonList() -> Observable<[Dragon]> {
         return Observable.create { observer -> Disposable in
             DispatchQueue.main.asyncAfter(deadline: .now() + TestConstants.defaultMockDelay) {
-                observer.onError(UserDataError.noLocalUsers)
+                observer.onError(LocalDataError.noLocalData)
                 observer.onCompleted()
             }
             return Disposables.create()
         }
     }
     
-    func saveUserList(users: UserResponse) {
+    func saveDragonList(dragons: [Dragon]) {
         
     }
 }

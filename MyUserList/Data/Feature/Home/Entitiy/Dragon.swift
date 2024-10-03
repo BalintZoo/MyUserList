@@ -5,12 +5,9 @@
 //  Created by Zoltán Bálint on 15.03.2024.
 //
 
-// Dragon.swift
-
 import Foundation
 
-// MARK: - Dragon
-struct Dragon: Codable {
+struct Dragon: Codable, Equatable {
     let heatShield: HeatShield
     let launchPayloadMass: Mass
     let launchPayloadVol: Volume
@@ -52,7 +49,7 @@ struct Dragon: Codable {
 }
 
 // MARK: - HeatShield
-struct HeatShield: Codable {
+struct HeatShield: Codable, Equatable {
     let material: String
     let sizeMeters: Double
     let tempDegrees: Int
@@ -67,13 +64,13 @@ struct HeatShield: Codable {
 }
 
 // MARK: - Mass
-struct Mass: Codable {
+struct Mass: Codable, Equatable {
     let kg: Int
     let lb: Int
 }
 
 // MARK: - Volume
-struct Volume: Codable {
+struct Volume: Codable, Equatable {
     let cubicMeters: Int
     let cubicFeet: Int
 
@@ -84,13 +81,13 @@ struct Volume: Codable {
 }
 
 // MARK: - Dimension
-struct Dimension: Codable {
+struct Dimension: Codable, Equatable {
     let meters: Double
     let feet: Double
 }
 
 // MARK: - PressurizedCapsule
-struct PressurizedCapsule: Codable {
+struct PressurizedCapsule: Codable, Equatable {
     let payloadVolume: Volume
 
     enum CodingKeys: String, CodingKey {
@@ -99,7 +96,7 @@ struct PressurizedCapsule: Codable {
 }
 
 // MARK: - Trunk
-struct Trunk: Codable {
+struct Trunk: Codable, Equatable {
     let trunkVolume: Volume
     let cargo: Cargo
 
@@ -110,7 +107,7 @@ struct Trunk: Codable {
 }
 
 // MARK: - Cargo
-struct Cargo: Codable {
+struct Cargo: Codable, Equatable {
     let solarArray: Int
     let unpressurizedCargo: Bool
 
@@ -121,7 +118,7 @@ struct Cargo: Codable {
 }
 
 // MARK: - Thruster
-struct Thruster: Codable {
+struct Thruster: Codable, Equatable {
     let type: String
     let amount, pods: Int
     let fuel1, fuel2: String
@@ -137,7 +134,7 @@ struct Thruster: Codable {
 }
 
 // MARK: - Thrust
-struct Thrust: Codable {
+struct Thrust: Codable, Equatable {
     let kN: Double
     let lbf: Double
 }

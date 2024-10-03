@@ -8,7 +8,7 @@
 import RxSwift
 import RxTest
 import XCTest
-@testable import MyUserList
+@testable import Dragons
 
 final class MainViewModelTests: XCTestCase {
 
@@ -28,22 +28,22 @@ final class MainViewModelTests: XCTestCase {
     }
     
     func testRequestUserList_Success() throws {
-        let expectedUserList = UserResponse.mock().data.map { user in
-            UserViewData(imageUrl: user.avatar,
-                                fullName: "\(user.firstName) \(user.lastName)",
-                                email: user.email)
+        let expectedUserList = Dragon.mock().map { dragon in
+            DragonViewData(imageUrl: URL(string: dragon.flickrImages.first ?? ""),
+                           name: "\(dragon.name)",
+                           details: dragon.description)
         }
         
-        let homeViewModel = HomeViewModel(getUserListUseCase: SuccesGetUserUseCase())
+        let homeViewModel = HomeViewModel(getDragonListUseCase: SuccesGetDragonsUseCase())
         
-        let usersObserver = scheduler.createObserver([UserViewData].self)
+        let usersObserver = scheduler.createObserver([DragonViewData].self)
         homeViewModel.users
             .bind(to: usersObserver)
             .disposed(by: disposeBag)
         
         let expectUsers = expectation(description:"users")
         
-        homeViewModel.requestUserList()
+        homeViewModel.requestDragonList()
         scheduler.start()
         
         homeViewModel.users.subscribe { users in
@@ -58,16 +58,16 @@ final class MainViewModelTests: XCTestCase {
     }
     
     func testRequestUserList_Fail() throws {
-        let homeViewModel = HomeViewModel(getUserListUseCase: FailGetUserUseCase())
+        let homeViewModel = HomeViewModel(getDragonListUseCase: FailGetDragonsUseCase())
         
-        let errorObserver = scheduler.createObserver(UserDataError.self)
+        let errorObserver = scheduler.createObserver(LocalDataError.self)
         homeViewModel.error
             .bind(to: errorObserver)
             .disposed(by: disposeBag)
         
         let expectError = expectation(description:"error")
         
-        homeViewModel.requestUserList()
+        homeViewModel.requestDragonList()
         scheduler.start()
         
         homeViewModel.error.subscribe { error in
@@ -82,7 +82,7 @@ final class MainViewModelTests: XCTestCase {
     }
     
     func testRequestUserList_Loading() {
-        let homeViewModel = HomeViewModel(getUserListUseCase: SuccesGetUserUseCase())
+        let homeViewModel = HomeViewModel(getDragonListUseCase: SuccesGetDragonsUseCase())
         
         let loadingObserver = scheduler.createObserver(Bool.self)
         homeViewModel.loading
@@ -91,7 +91,7 @@ final class MainViewModelTests: XCTestCase {
         
         let expectLoadingFalse = expectation(description:"loading false")
         
-        homeViewModel.requestUserList()
+        homeViewModel.requestDragonList()
         scheduler.start()
         
         homeViewModel.loading.subscribe { loading in

@@ -17,10 +17,10 @@ class HomeViewModel {
     
     private let disposable = DisposeBag()
     
-    private let getDragonListUseCase: GetDragonListUseCase
+    private let getDragonListUseCase: GetDragonListUseCaseProtocol
     
     //MARK: - Init
-    init(getDragonListUseCase: GetDragonListUseCase) {
+    init(getDragonListUseCase: GetDragonListUseCaseProtocol) {
         self.getDragonListUseCase = getDragonListUseCase
     }
     
