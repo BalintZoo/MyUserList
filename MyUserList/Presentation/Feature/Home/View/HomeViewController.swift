@@ -16,10 +16,10 @@ class HomeViewController: UIViewController {
     
     private let cellReuseIdentifier = "UserCell"
     
-    private var homeViewModel = HomeViewModel(getUserListUseCase:
-                                        GetUserListUseCase(usersDataSource:
-                                                            UserListDataSourceImpl(remoteStorage: UsersRemoteStorageImpl(),
-                                                                                   localStorage: UsersLocalStorageImpl())
+    private var homeViewModel = HomeViewModel(getDragonListUseCase:
+                                                GetDragonListUseCase(dragonsDataSource:
+                                                            DragonListDataSourceImpl(remoteStorage: DragonsRemoteStorageImpl(),
+                                                                                   localStorage: DragonsLocalStorageImpl())
                                                           )
     )
     
@@ -30,14 +30,39 @@ class HomeViewController: UIViewController {
         
         navigationItem.title = "users".localized
         
+        checkAuthentication()
+        
         setupBindings()
         
-        homeViewModel.requestUserList()
+        homeViewModel.requestDragonList()
+    }
+    
+    func checkAuthentication() {
+        if LoginManager.shared.getToken() == nil {
+           let loginVC = LoginViewController()
+           loginVC.title = "Login"
+           let navController = UINavigationController(rootViewController: loginVC)
+           present(navController, animated: true, completion: nil)
+       } else {
+           homeViewModel.requestDragonList()
+       }
+
+       NotificationCenter.default.addObserver(
+           self,
+           selector: #selector(loginSucceeded),
+           name: .loginSuccess,
+           object: nil
+       )
+    }
+        
+    @objc func loginSucceeded() {
+        dismiss(animated: true)
+        homeViewModel.requestDragonList()
     }
     
     private func setupBindings() {
         
-        tableView.rx.modelSelected(UserViewData.self)
+        tableView.rx.modelSelected(DragonViewData.self)
            .subscribe(onNext: { [weak self] model in
                guard let self = self else { return }
                
@@ -57,7 +82,7 @@ class HomeViewController: UIViewController {
             .observe(on:MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: cellReuseIdentifier)) { row, model, cell in
             if let userCell = cell as? UserTableViewCell {
-                userCell.nameLabel?.text = model.fullName
+                userCell.nameLabel?.text = model.name
                 userCell.userImageView?.kf.setImage(with: model.imageUrl,
                                                     placeholder: UIImage(named: "user"),
                                                     options: [.cacheMemoryOnly])
@@ -80,7 +105,7 @@ class HomeViewController: UIViewController {
                     self.showAlertMessage(title: "error".localized, message: "general_error".localized)
                 case .networkError(let errorMessage):
                     self.showAlertMessage(title: "error".localized, message: errorMessage)
-                case .noLocalUsers:
+                case .noLocalData:
                     self.showAlertMessage(title: "error".localized, message: "no_local_data".localized)
                 }
             })

@@ -11,32 +11,32 @@ import RxSwift
 
 class HomeViewModel {
     //MARK: - Properties
-    public let users : PublishSubject<[UserViewData]> = PublishSubject()
-    public let error : PublishSubject<UserDataError> = PublishSubject()
+    public let users : PublishSubject<[DragonViewData]> = PublishSubject()
+    public let error : PublishSubject<LocalDataError> = PublishSubject()
     public let loading: PublishSubject<Bool> = PublishSubject()
     
     private let disposable = DisposeBag()
     
-    private let getUserListUseCase: GetUserListUseCaseProtocol
+    private let getDragonListUseCase: GetDragonListUseCase
     
     //MARK: - Init
-    init(getUserListUseCase: GetUserListUseCaseProtocol) {
-        self.getUserListUseCase = getUserListUseCase
+    init(getDragonListUseCase: GetDragonListUseCase) {
+        self.getDragonListUseCase = getDragonListUseCase
     }
     
     //MARK: - Public functions
-    public func requestUserList() {
+    public func requestDragonList() {
         loading.onNext(true)
-        getUserListUseCase.runCase()
-            .subscribe(onNext: { [weak self] userList in
+        getDragonListUseCase.runCase()
+            .subscribe(onNext: { [weak self] list in
                 guard let self = self else { return }
-                let viewUserList = self.convertToViewData(userList: userList)
-                self.users.onNext(viewUserList)
+                let viewDragonList = self.convertToViewData(dragonList: list)
+                self.users.onNext(viewDragonList)
                 self.loading.onNext(false)
             }, onError: { [weak self] error in
                 guard let self = self else { return }
                 loading.onNext(false)
-                self.error.onNext(error as? UserDataError ?? .generalError)
+                self.error.onNext(error as? LocalDataError ?? .generalError)
             })
         .disposed(by: disposable)
     }
@@ -45,11 +45,11 @@ class HomeViewModel {
     
     ///Convert the User to the ViewData. This way the UI will have only the properties that it needs
     ///also in case of changes on backend or UI side the code to modify is less
-    private func convertToViewData(userList: [User]) -> [UserViewData] {
-        return userList.map({ user in
-            UserViewData(imageUrl: user.avatar,
-                                fullName: "\(user.firstName) \(user.lastName)",
-                                email: user.email)
+    private func convertToViewData(dragonList: [Dragon]) -> [DragonViewData] {
+        return dragonList.map({ dragon in
+            DragonViewData(imageUrl: URL(string: dragon.flickrImages.first ?? ""),
+                           name: "\(dragon.name)",
+                           details: dragon.description)
         })
     }
 }

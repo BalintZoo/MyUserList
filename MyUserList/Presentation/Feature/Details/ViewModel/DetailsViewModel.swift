@@ -10,10 +10,10 @@ import RxSwift
  
 class DetailsViewModel {
     
-    public let user : Observable<UserViewData>
+    public let user : Observable<DragonViewData>
     
-    init(userData: UserViewData) {
-        user = Observable<UserViewData>.create({ observer -> Disposable in
+    init(userData: DragonViewData) {
+        user = Observable<DragonViewData>.create({ observer -> Disposable in
             observer.onNext(userData)
             observer.onCompleted()
             return Disposables.create()

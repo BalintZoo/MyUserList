@@ -8,6 +8,6 @@
 import Foundation
 import RxSwift
 
-protocol UserListDataSourceProtocol {
-    func getUserList() -> Observable<UserResponse>
+protocol DragonListDataSourceProtocol {
+    func getDragonList() -> Observable<[Dragon]>
 }

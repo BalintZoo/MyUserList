@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -116,8 +116,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCX-Nw-fBY">
-                                <rect key="frame" x="174" y="366" width="45" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCX-Nw-fBY">
+                                <rect key="frame" x="19.666666666666657" y="366" width="353.66666666666674" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -132,6 +132,7 @@
                             <constraint firstItem="blc-Nr-vh2" firstAttribute="height" secondItem="8Kw-Gj-XHj" secondAttribute="height" multiplier="0.25" id="brH-pf-Oer"/>
                             <constraint firstItem="9pe-ub-GlS" firstAttribute="width" secondItem="8Kw-Gj-XHj" secondAttribute="width" multiplier="0.9" id="c2h-HP-Ueo"/>
                             <constraint firstItem="9pe-ub-GlS" firstAttribute="centerX" secondItem="fV3-ZR-w6w" secondAttribute="centerX" id="d1J-sU-cqz"/>
+                            <constraint firstItem="RCX-Nw-fBY" firstAttribute="width" secondItem="8Kw-Gj-XHj" secondAttribute="width" multiplier="0.9" id="e4E-gA-6VB"/>
                             <constraint firstItem="9pe-ub-GlS" firstAttribute="top" secondItem="blc-Nr-vh2" secondAttribute="bottom" constant="30" id="v4x-TC-OTh"/>
                             <constraint firstItem="blc-Nr-vh2" firstAttribute="centerX" secondItem="fV3-ZR-w6w" secondAttribute="centerX" id="xMw-jx-Khp"/>
                         </constraints>
@@ -155,6 +156,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="svh-Jo-3XS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BjX-ww-MW1">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

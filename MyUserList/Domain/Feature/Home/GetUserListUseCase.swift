@@ -8,30 +8,30 @@
 import Foundation
 import RxSwift
 
-protocol GetUserListUseCaseProtocol {
-    func runCase() -> Observable<[User]>
+protocol GetDragonListUseCaseProtocol {
+    func runCase() -> Observable<[Dragon]>
 }
 
-struct GetUserListUseCase {
+struct GetDragonListUseCase {
     // MARK: - Fields
-    private let usersDataSource: UserListDataSourceProtocol
+    private let dragonsDataSource: DragonListDataSourceProtocol
 
     // MARK: - Initializers
-    init(usersDataSource: UserListDataSourceProtocol) {
-        self.usersDataSource = usersDataSource
+    init(dragonsDataSource: DragonListDataSourceProtocol) {
+        self.dragonsDataSource = dragonsDataSource
     }
 }
 
-// MARK: - GetUserListUseCaseProtocol implementation
-extension GetUserListUseCase: GetUserListUseCaseProtocol {
-    func runCase() -> Observable<[User]> {
-        return usersDataSource.getUserList().map { userResponse in
-            return userResponse.data.sorted(by: sortUserList)
+// MARK: - GetDragonListUseCaseProtocol implementation
+extension GetDragonListUseCase: GetDragonListUseCaseProtocol {
+    func runCase() -> Observable<[Dragon]> {
+        return dragonsDataSource.getDragonList().map { dragons in
+            return dragons.sorted(by: sortUserList)
         }
     }
     
     ///Sort user list in alphabetical order
-    private func sortUserList(user1: User, user2: User) -> Bool {
-        user1.firstName < user2.firstName
+    private func sortUserList(drg1: Dragon, drg2: Dragon) -> Bool {
+        drg1.name < drg1.name
     }
 }

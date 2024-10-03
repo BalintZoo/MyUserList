@@ -7,9 +7,13 @@
 
 import UIKit
 
+extension Notification.Name {
+    static let loginSuccess = Notification.Name("loginSuccess")
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -29,6 +33,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func application(
+           _ app: UIApplication,
+           open url: URL,
+           options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+       ) -> Bool {
 
+           // Check if the URL matches your redirect URL
+           if url.scheme == "de.evag" {
+               // Handle the redirect
+               LoginManager.shared.handleRedirect(url: url) { result in
+                   switch result {
+                   case .success(let token):
+                       print("Login successful. Access token: \(token)")
+                       NotificationCenter.default.post(name: .loginSuccess, object: nil)
+                   case .failure(let error):
+                       print("Login failed: \(error)")
+                   }
+               }
+               return true
+           }
+           return false
+       }
 }
 

@@ -8,28 +8,27 @@
 import Alamofire
 import RxSwift
 
-struct UserListDataSourceImpl: UserListDataSourceProtocol {
+struct DragonListDataSourceImpl: DragonListDataSourceProtocol {
     
-    private let remoteStorage: UsersRemoteStorage
-    private let localStorage: UsersLocalStorage
+    private let remoteStorage: DragonsRemoteStorage
+    private let localStorage: DragonsLocalStorage
     
     private let disposable = DisposeBag()
     
-    init(remoteStorage: UsersRemoteStorage, localStorage: UsersLocalStorage) {
+    init(remoteStorage: DragonsRemoteStorage, localStorage: DragonsLocalStorage) {
         self.remoteStorage = remoteStorage
         self.localStorage = localStorage
     }
     
-    func getUserList() -> Observable<UserResponse> {
-        
-        return remoteStorage.fetchUsersFromNetwork()
-            .do(onNext: { userResponse in
+    func getDragonList() -> Observable<[Dragon]> {
+        return remoteStorage.fetchDragonsFromNetwork()
+            .do(onNext: { response in
                 // Save fetched data to local storage if a succesful response was sent to our network request
-                self.localStorage.saveUserList(users: userResponse)
+                self.localStorage.saveDragonList(dragons: response)
             })
             .catch { error in
-                // Falling back and try to obtain users from local storage in case of network failure
-                return self.localStorage.getLocalUserList()
+                // Falling back and try to obtain items from local storage in case of network failure
+                return self.localStorage.getLocalDragonList()
             }
     }
 }

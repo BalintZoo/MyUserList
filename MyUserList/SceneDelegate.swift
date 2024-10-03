@@ -48,5 +48,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+            guard let urlContext = URLContexts.first else {
+                return
+            }
+            
+            let url = urlContext.url
+
+            if url.scheme == "de.evag" {
+                print("Handling redirect URL in SceneDelegate")
+
+                // Handle the redirect with OIDCLoginManager
+                LoginManager.shared.handleRedirect(url: url) { result in
+                    switch result {
+                    case .success(let token):
+                        print("Login successful. Access token: \(token)")
+                        NotificationCenter.default.post(name: .loginSuccess, object: nil)
+                    case .failure(let error):
+                        print("Login failed: \(error)")
+                    }
+                }
+            }
+        }
 }
 

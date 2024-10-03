@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct UserViewData: Equatable {
-    let imageUrl: URL
-    let fullName: String
-    let email: String
+struct DragonViewData: Equatable {
+    let imageUrl: URL?
+    let name: String
+    let details: String
 }

@@ -33,11 +33,11 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "details".localized
         
-        viewModel.user.subscribe { [weak self] userDetails in
+        viewModel.user.subscribe { [weak self] details in
             guard let self = self else { return }
-            fullName.text = userDetails.fullName
-            email.text = userDetails.email
-            userImageView.kf.setImage(with: userDetails.imageUrl,
+            fullName.text = details.name
+            email.text = details.details
+            userImageView.kf.setImage(with: details.imageUrl,
                                       placeholder: UIImage(named: "user"),
                                       options: [.cacheMemoryOnly])
         }
