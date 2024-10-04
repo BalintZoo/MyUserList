@@ -65,7 +65,7 @@ final class DragonListDataSourceTest: XCTestCase {
         _ = observable.subscribe(onNext: { users in
             
         }, onError: { error in
-            XCTAssertEqual(error as? LocalDataError, .noLocalData)
+            XCTAssertEqual(error as? DataError, .noLocalData)
             expectation.fulfill()
         })
                 

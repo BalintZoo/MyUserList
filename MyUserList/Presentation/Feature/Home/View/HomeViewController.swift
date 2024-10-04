@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
                                                           )
     )
     
+    lazy private var loginVC = LoginViewController()
+    
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -30,37 +32,42 @@ class HomeViewController: UIViewController {
         
         navigationItem.title = "users".localized
         
+        loginVC.title = "Login"
+        
         checkAuthentication()
         
-        setupBindings()
-        
-        homeViewModel.requestDragonList()
+        setupBindings()        
     }
-    
+        
     func checkAuthentication() {
         if LoginManager.shared.getToken() == nil {
-           let loginVC = LoginViewController()
-           loginVC.title = "Login"
-           let navController = UINavigationController(rootViewController: loginVC)
-           present(navController, animated: true, completion: nil)
-       } else {
-           homeViewModel.requestDragonList()
-       }
-
-       NotificationCenter.default.addObserver(
-           self,
-           selector: #selector(loginSucceeded),
-           name: .loginSuccess,
-           object: nil
-       )
+            presentLogin()
+        } else {
+            homeViewModel.requestDragonList()
+        }
     }
         
     @objc func loginSucceeded() {
-        dismiss(animated: true)
-        homeViewModel.requestDragonList()
+        DispatchQueue.main.async { [weak self] in
+            self?.dismiss(animated: true)
+        }
+        
     }
     
     private func setupBindings() {
+        
+        loginVC.loginFinished
+                    .observe(on: MainScheduler.instance)
+                    .subscribe(onNext: { [weak self] result in
+                        switch result {
+                        case .success(let token):
+                            self?.dismiss(animated: true)
+                            self?.homeViewModel.requestDragonList()
+                        case .failure(let error):
+                            self?.presentLoginError(error)
+                        }
+                    })
+                    .disposed(by: disposeBag)
         
         tableView.rx.modelSelected(DragonViewData.self)
            .subscribe(onNext: { [weak self] model in
@@ -78,7 +85,7 @@ class HomeViewController: UIViewController {
         }).disposed(by: disposeBag)
         
         homeViewModel
-            .users
+            .dragons
             .observe(on:MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: cellReuseIdentifier)) { row, model, cell in
             if let userCell = cell as? UserTableViewCell {
@@ -100,17 +107,30 @@ class HomeViewController: UIViewController {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] (error) in
                 guard let self = self else { return }
-                // @BZ get rid of this switch by implementing localizederror
-                switch error {
-                case .generalError:
-                    self.showAlertMessage(title: "error".localized, message: "general_error".localized)
-                case .networkError(let errorMessage):
-                    self.showAlertMessage(title: "error".localized, message: errorMessage)
-                case .noLocalData:
-                    self.showAlertMessage(title: "error".localized, message: "no_local_data".localized)
-                }
+                self.showAlertMessage(title: "error".localized, message: error.localizedDescription)
             })
             .disposed(by: disposeBag)
+    }
+    
+    // MARK: - Error Handling
+    
+    private func presentLoginError(_ error: Error) {
+        let alert = UIAlertController(title: "Login Failed", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Retry", style: .default) { [weak self] _ in
+            self?.presentLogin()
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
+            // Try to load even if login failed, to get the offline saved list if available
+            self?.homeViewModel.requestDragonList()
+        })
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
+    
+    private func presentLogin() {
+        let navController = UINavigationController(rootViewController: loginVC)
+        present(navController, animated: true, completion: nil)
     }
 }
 

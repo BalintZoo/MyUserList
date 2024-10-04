@@ -25,7 +25,7 @@ struct FailGetDragonsUseCase: GetDragonListUseCaseProtocol {
     func runCase() -> Observable<[Dragon]> {
         return Observable.create { observer -> Disposable in
             DispatchQueue.main.asyncAfter(deadline: .now() + TestConstants.defaultMockDelay) {
-                observer.onError(LocalDataError.generalError)
+                observer.onError(DataError.generalError)
                 observer.onCompleted()
             }
             return Disposables.create()

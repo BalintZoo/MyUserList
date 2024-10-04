@@ -25,7 +25,7 @@ struct FailDragonListDataSource: DragonListDataSourceProtocol {
     func getDragonList() -> Observable<[Dragon]> {
         return Observable.create { observer -> Disposable in
             DispatchQueue.main.asyncAfter(deadline: .now() + TestConstants.defaultMockDelay) {
-                observer.onError(LocalDataError.noLocalData)
+                observer.onError(DataError.noLocalData)
                 observer.onCompleted()
             }
             return Disposables.create()

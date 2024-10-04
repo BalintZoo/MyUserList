@@ -37,7 +37,7 @@ final class MainViewModelTests: XCTestCase {
         let homeViewModel = HomeViewModel(getDragonListUseCase: SuccesGetDragonsUseCase())
         
         let usersObserver = scheduler.createObserver([DragonViewData].self)
-        homeViewModel.users
+        homeViewModel.dragons
             .bind(to: usersObserver)
             .disposed(by: disposeBag)
         
@@ -46,7 +46,7 @@ final class MainViewModelTests: XCTestCase {
         homeViewModel.requestDragonList()
         scheduler.start()
         
-        homeViewModel.users.subscribe { users in
+        homeViewModel.dragons.subscribe { users in
             expectUsers.fulfill()
         }
         .disposed(by: disposeBag)
@@ -60,7 +60,7 @@ final class MainViewModelTests: XCTestCase {
     func testRequestUserList_Fail() throws {
         let homeViewModel = HomeViewModel(getDragonListUseCase: FailGetDragonsUseCase())
         
-        let errorObserver = scheduler.createObserver(LocalDataError.self)
+        let errorObserver = scheduler.createObserver(DataError.self)
         homeViewModel.error
             .bind(to: errorObserver)
             .disposed(by: disposeBag)

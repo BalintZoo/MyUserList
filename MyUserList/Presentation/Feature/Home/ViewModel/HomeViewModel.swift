@@ -11,8 +11,8 @@ import RxSwift
 
 class HomeViewModel {
     //MARK: - Properties
-    public let users : PublishSubject<[DragonViewData]> = PublishSubject()
-    public let error : PublishSubject<LocalDataError> = PublishSubject()
+    public let dragons : PublishSubject<[DragonViewData]> = PublishSubject()
+    public let error : PublishSubject<DataError> = PublishSubject()
     public let loading: PublishSubject<Bool> = PublishSubject()
     
     private let disposable = DisposeBag()
@@ -31,12 +31,12 @@ class HomeViewModel {
             .subscribe(onNext: { [weak self] list in
                 guard let self = self else { return }
                 let viewDragonList = self.convertToViewData(dragonList: list)
-                self.users.onNext(viewDragonList)
+                self.dragons.onNext(viewDragonList)
                 self.loading.onNext(false)
             }, onError: { [weak self] error in
                 guard let self = self else { return }
                 loading.onNext(false)
-                self.error.onNext(error as? LocalDataError ?? .generalError)
+                self.error.onNext(error as? DataError ?? .generalError)
             })
         .disposed(by: disposable)
     }

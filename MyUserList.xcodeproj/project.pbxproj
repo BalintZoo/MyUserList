@@ -42,7 +42,7 @@
 		908188312BA46A5200497258 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 908188302BA46A5200497258 /* Alamofire */; };
 		908188332BA46AC500497258 /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908188322BA46AC500497258 /* Dragon.swift */; };
 		9081883C2BA4A8FE00497258 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9081883B2BA4A8FE00497258 /* UserTableViewCell.swift */; };
-		90B3417E2BA843BF000DF15E /* LocalDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B3417D2BA843BF000DF15E /* LocalDataError.swift */; };
+		90B3417E2BA843BF000DF15E /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B3417D2BA843BF000DF15E /* DataError.swift */; };
 		90B341812BA84420000DF15E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B341802BA84420000DF15E /* String+Extensions.swift */; };
 		90B341842BA84D51000DF15E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90B341822BA84D51000DF15E /* Localizable.strings */; };
 		90B341882BA85B64000DF15E /* MockGetDragonListUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B341872BA85B64000DF15E /* MockGetDragonListUseCases.swift */; };
@@ -93,7 +93,7 @@
 		9081882D2BA4656300497258 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		908188322BA46AC500497258 /* Dragon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dragon.swift; sourceTree = "<group>"; };
 		9081883B2BA4A8FE00497258 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		90B3417D2BA843BF000DF15E /* LocalDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataError.swift; sourceTree = "<group>"; };
+		90B3417D2BA843BF000DF15E /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		90B341802BA84420000DF15E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		90B341832BA84D51000DF15E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		90B341872BA85B64000DF15E /* MockGetDragonListUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetDragonListUseCases.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				908188322BA46AC500497258 /* Dragon.swift */,
-				90B3417D2BA843BF000DF15E /* LocalDataError.swift */,
+				90B3417D2BA843BF000DF15E /* DataError.swift */,
 			);
 			path = Entitiy;
 			sourceTree = "<group>";
@@ -542,7 +542,7 @@
 				5EE21AF62CAEBC7200B8E947 /* KeyChainHelper.swift in Sources */,
 				900EA3582BA6E635000D59EA /* UserListDataSourceImpl.swift in Sources */,
 				900EA35B2BA824DE000D59EA /* UIViewController+Extensions.swift in Sources */,
-				90B3417E2BA843BF000DF15E /* LocalDataError.swift in Sources */,
+				90B3417E2BA843BF000DF15E /* DataError.swift in Sources */,
 				5EA116182CAE803100349C45 /* LoginManager.swift in Sources */,
 				908188292BA436AC00497258 /* DragonViewData.swift in Sources */,
 				902530452BA9756F007821D3 /* UserDefaultsStorage.swift in Sources */,

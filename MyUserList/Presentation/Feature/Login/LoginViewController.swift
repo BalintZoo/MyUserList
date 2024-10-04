@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class LoginViewController: UIViewController {
+    
+    public let loginFinished = PublishSubject<Result<String, Error>>()
 
     // MARK: - UI Elements
 
@@ -55,25 +58,10 @@ class LoginViewController: UIViewController {
             switch result {
             case .success(let token):
                 print("Login successful. Access token: \(token)")
-                DispatchQueue.main.async {
-                    self?.dismiss(animated: true, completion: nil)
-                }
+                self?.loginFinished.onNext(.success(token))
             case .failure(let error):
-                self?.presentLoginError(error)
+                self?.loginFinished.onNext(.failure(error))
             }
-        }
-    }
-
-    // MARK: - Error Handling
-    
-    private func presentLoginError(_ error: Error) {
-        let alert = UIAlertController(title: "Login Failed", message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Retry", style: .default) { [weak self] _ in
-            self?.startLogin()
-        })
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        DispatchQueue.main.async {
-            self.present(alert, animated: true)
         }
     }
 }

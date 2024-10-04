@@ -56,17 +56,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let url = urlContext.url
 
             if url.scheme == "de.evag" {
-                print("Handling redirect URL in SceneDelegate")
-
-                LoginManager.shared.handleRedirect(url: url) { result in
-                    switch result {
-                    case .success(let token):
-                        print("Login successful. Access token: \(token)")
-                        NotificationCenter.default.post(name: .loginSuccess, object: nil)
-                    case .failure(let error):
-                        print("Login failed: \(error)")
-                    }
-                }
+                LoginManager.shared.handleRedirect(url: url)
             }
         }
 }

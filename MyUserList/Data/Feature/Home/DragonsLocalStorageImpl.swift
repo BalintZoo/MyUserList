@@ -27,7 +27,7 @@ struct DragonsLocalStorageImpl: DragonsLocalStorage {
             }
         } else {
             return Observable.create { observer -> Disposable in
-                observer.onError(LocalDataError.noLocalData)
+                observer.onError(DataError.noLocalData)
                 return Disposables.create()
             }
         }

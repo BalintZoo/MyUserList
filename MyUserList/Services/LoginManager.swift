@@ -65,7 +65,7 @@ class LoginManager {
     }
 
     // Handle the redirect with the authorization code
-    func handleRedirect(url: URL, completion: ((Result<String, Error>) -> Void)? = nil) {
+    func handleRedirect(url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
               let code = components.queryItems?.first(where: { $0.name == "code" })?.value else {
             loginCompletion?(.failure(OIDCError.invalidRedirect))

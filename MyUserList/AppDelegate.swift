@@ -7,10 +7,6 @@
 
 import UIKit
 
-extension Notification.Name {
-    static let loginSuccess = Notification.Name("loginSuccess")
-}
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -39,15 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            options: [UIApplication.OpenURLOptionsKey : Any] = [:]
        ) -> Bool {
            if url.scheme == "de.evag" {
-               LoginManager.shared.handleRedirect(url: url) { result in
-                   switch result {
-                   case .success(let token):
-                       print("Login successful. Access token: \(token)")
-                       NotificationCenter.default.post(name: .loginSuccess, object: nil)
-                   case .failure(let error):
-                       print("Login failed: \(error)")
-                   }
-               }
+               LoginManager.shared.handleRedirect(url: url)
                return true
            }
            return false
