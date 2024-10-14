@@ -13,6 +13,7 @@ protocol DragonsLocalStorage {
     func saveDragonList(dragons: [Dragon])
 }
 
+/// For now a simple user defaults based local storage is implemented, but this can be changed to swiftdata, sql or to file storage
 struct DragonsLocalStorageImpl: DragonsLocalStorage {
     
     static let DragonsKey = "DragonsKey"

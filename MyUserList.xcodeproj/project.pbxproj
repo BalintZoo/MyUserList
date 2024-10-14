@@ -19,7 +19,7 @@
 		900EA34B2BA6E2A6000D59EA /* DragonsLocalStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA34A2BA6E2A6000D59EA /* DragonsLocalStorageImpl.swift */; };
 		900EA3542BA6E52B000D59EA /* UserListDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3532BA6E52B000D59EA /* UserListDataSourceProtocol.swift */; };
 		900EA3562BA6E601000D59EA /* GetUserListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3552BA6E601000D59EA /* GetUserListUseCase.swift */; };
-		900EA3582BA6E635000D59EA /* UserListDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3572BA6E635000D59EA /* UserListDataSourceImpl.swift */; };
+		900EA3582BA6E635000D59EA /* DragonListDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA3572BA6E635000D59EA /* DragonListDataSourceImpl.swift */; };
 		900EA35B2BA824DE000D59EA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA35A2BA824DE000D59EA /* UIViewController+Extensions.swift */; };
 		902530352BA86E82007821D3 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 902530342BA86E82007821D3 /* RxBlocking */; };
 		902530372BA86E82007821D3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 902530362BA86E82007821D3 /* RxCocoa */; };
@@ -41,7 +41,7 @@
 		9081882E2BA4656300497258 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9081882D2BA4656300497258 /* HomeViewModel.swift */; };
 		908188312BA46A5200497258 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 908188302BA46A5200497258 /* Alamofire */; };
 		908188332BA46AC500497258 /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908188322BA46AC500497258 /* Dragon.swift */; };
-		9081883C2BA4A8FE00497258 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9081883B2BA4A8FE00497258 /* UserTableViewCell.swift */; };
+		9081883C2BA4A8FE00497258 /* DragonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9081883B2BA4A8FE00497258 /* DragonTableViewCell.swift */; };
 		90B3417E2BA843BF000DF15E /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B3417D2BA843BF000DF15E /* DataError.swift */; };
 		90B341812BA84420000DF15E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B341802BA84420000DF15E /* String+Extensions.swift */; };
 		90B341842BA84D51000DF15E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90B341822BA84D51000DF15E /* Localizable.strings */; };
@@ -72,7 +72,7 @@
 		900EA34A2BA6E2A6000D59EA /* DragonsLocalStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonsLocalStorageImpl.swift; sourceTree = "<group>"; };
 		900EA3532BA6E52B000D59EA /* UserListDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataSourceProtocol.swift; sourceTree = "<group>"; };
 		900EA3552BA6E601000D59EA /* GetUserListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserListUseCase.swift; sourceTree = "<group>"; };
-		900EA3572BA6E635000D59EA /* UserListDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataSourceImpl.swift; sourceTree = "<group>"; };
+		900EA3572BA6E635000D59EA /* DragonListDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonListDataSourceImpl.swift; sourceTree = "<group>"; };
 		900EA35A2BA824DE000D59EA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		9025303F2BA8931D007821D3 /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		902530442BA9756F007821D3 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		908188282BA436AC00497258 /* DragonViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonViewData.swift; sourceTree = "<group>"; };
 		9081882D2BA4656300497258 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		908188322BA46AC500497258 /* Dragon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dragon.swift; sourceTree = "<group>"; };
-		9081883B2BA4A8FE00497258 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		9081883B2BA4A8FE00497258 /* DragonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonTableViewCell.swift; sourceTree = "<group>"; };
 		90B3417D2BA843BF000DF15E /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		90B341802BA84420000DF15E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		90B341832BA84D51000DF15E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				908187F32BA34FCD00497258 /* HomeViewController.swift */,
-				9081883B2BA4A8FE00497258 /* UserTableViewCell.swift */,
+				9081883B2BA4A8FE00497258 /* DragonTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				900EA34D2BA6E458000D59EA /* Entitiy */,
-				900EA3572BA6E635000D59EA /* UserListDataSourceImpl.swift */,
+				900EA3572BA6E635000D59EA /* DragonListDataSourceImpl.swift */,
 				900EA3482BA6E290000D59EA /* DragonsRemoteStorage.swift */,
 				900EA34A2BA6E2A6000D59EA /* DragonsLocalStorageImpl.swift */,
 			);
@@ -537,10 +537,10 @@
 				9008CD442BA9C1F100BB680D /* DetailsViewModel.swift in Sources */,
 				5EE21AF42CAE9C4200B8E947 /* LoginViewController.swift in Sources */,
 				908188232BA42E8E00497258 /* DetailsViewController.swift in Sources */,
-				9081883C2BA4A8FE00497258 /* UserTableViewCell.swift in Sources */,
+				9081883C2BA4A8FE00497258 /* DragonTableViewCell.swift in Sources */,
 				900EA3492BA6E290000D59EA /* DragonsRemoteStorage.swift in Sources */,
 				5EE21AF62CAEBC7200B8E947 /* KeyChainHelper.swift in Sources */,
-				900EA3582BA6E635000D59EA /* UserListDataSourceImpl.swift in Sources */,
+				900EA3582BA6E635000D59EA /* DragonListDataSourceImpl.swift in Sources */,
 				900EA35B2BA824DE000D59EA /* UIViewController+Extensions.swift in Sources */,
 				90B3417E2BA843BF000DF15E /* DataError.swift in Sources */,
 				5EA116182CAE803100349C45 /* LoginManager.swift in Sources */,

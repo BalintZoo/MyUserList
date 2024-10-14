@@ -23,24 +23,22 @@ class LoginManager {
 
     private let tokenKey = "accessToken"
     
-    // Existing properties
     private let clientID = "ruhrbahn_app"
     private let scopes = ["openid"]
     private let redirectURL = "de.evag://callback"
     private let authorizationURL = "https://iam.beta.handyticket.link/realms/ruhrbahn_essen/protocol/openid-connect/auth"
     private let tokenURL = "https://iam.beta.handyticket.link/realms/ruhrbahn_essen/protocol/openid-connect/token"
 
-    // Add a property to hold the completion handler
     private var loginCompletion: ((Result<String, Error>) -> Void)?
 
-    // Method to initiate the OIDC login
+    /// Method to initiate the OIDC login
     func login(completion: @escaping (Result<String, Error>) -> Void) {
         self.loginCompletion = completion
         let authRequest = buildAuthRequest()
         openAuthURL(authRequest)
     }
     
-    // Build the authorization URL request
+    /// Build the authorization URL request
     private func buildAuthRequest() -> URL {
         var components = URLComponents(string: authorizationURL)!
         components.queryItems = [
@@ -53,7 +51,7 @@ class LoginManager {
         return components.url!
     }
 
-    // Open the authorization URL in a browser
+    /// Open the authorization URL in a browser
     private func openAuthURL(_ url: URL) {
         DispatchQueue.main.async {
             if UIApplication.shared.canOpenURL(url) {
@@ -64,7 +62,7 @@ class LoginManager {
         }
     }
 
-    // Handle the redirect with the authorization code
+    /// Handle the redirect with the authorization code
     func handleRedirect(url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
               let code = components.queryItems?.first(where: { $0.name == "code" })?.value else {

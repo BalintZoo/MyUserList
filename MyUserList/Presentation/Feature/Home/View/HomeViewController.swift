@@ -9,6 +9,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+/// The main landing page of the app with the list of items
+/// Would be interesting exercise to re-write the UIKit into a full SwiftUI app, it's a good practice for a lot of real world projects out there
 class HomeViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
@@ -16,6 +18,7 @@ class HomeViewController: UIViewController {
     
     private let cellReuseIdentifier = "UserCell"
     
+    /// This definetly needs to be more pretty, with some nice DI implementation for ex.
     private var homeViewModel = HomeViewModel(getDragonListUseCase:
                                                 GetDragonListUseCase(dragonsDataSource:
                                                             DragonListDataSourceImpl(remoteStorage: DragonsRemoteStorageImpl(),
@@ -88,7 +91,7 @@ class HomeViewController: UIViewController {
             .dragons
             .observe(on:MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: cellReuseIdentifier)) { row, model, cell in
-            if let userCell = cell as? UserTableViewCell {
+            if let userCell = cell as? DragonTableViewCell {
                 userCell.nameLabel?.text = model.name
                 userCell.userImageView?.kf.setImage(with: model.imageUrl,
                                                     placeholder: UIImage(named: "user"),

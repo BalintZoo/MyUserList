@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class UserTableViewCell: UITableViewCell {
+class DragonTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
 }
