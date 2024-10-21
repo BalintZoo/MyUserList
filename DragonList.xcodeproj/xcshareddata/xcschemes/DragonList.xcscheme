@@ -17,8 +17,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "908187EB2BA34FCD00497258"
                BuildableName = "Dragons.app"
-               BlueprintName = "MyUserList"
-               ReferencedContainer = "container:MyUserList.xcodeproj">
+               BlueprintName = "DragonList"
+               ReferencedContainer = "container:DragonList.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,9 +36,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "908188012BA34FCF00497258"
-               BuildableName = "MyUserListTests.xctest"
-               BlueprintName = "MyUserListTests"
-               ReferencedContainer = "container:MyUserList.xcodeproj">
+               BuildableName = "DragonListTests.xctest"
+               BlueprintName = "DragonListTests"
+               ReferencedContainer = "container:DragonList.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "9081880B2BA34FCF00497258"
                BuildableName = "MyUserListUITests.xctest"
                BlueprintName = "MyUserListUITests"
-               ReferencedContainer = "container:MyUserList.xcodeproj">
+               ReferencedContainer = "container:DragonList.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -70,8 +70,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "908187EB2BA34FCD00497258"
             BuildableName = "Dragons.app"
-            BlueprintName = "MyUserList"
-            ReferencedContainer = "container:MyUserList.xcodeproj">
+            BlueprintName = "DragonList"
+            ReferencedContainer = "container:DragonList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -87,8 +87,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "908187EB2BA34FCD00497258"
             BuildableName = "Dragons.app"
-            BlueprintName = "MyUserList"
-            ReferencedContainer = "container:MyUserList.xcodeproj">
+            BlueprintName = "DragonList"
+            ReferencedContainer = "container:DragonList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

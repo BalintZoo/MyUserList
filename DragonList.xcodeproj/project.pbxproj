@@ -84,10 +84,8 @@
 		908187F82BA34FCF00497258 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		908187FB2BA34FCF00497258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		908187FD2BA34FCF00497258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		908188022BA34FCF00497258 /* MyUserListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyUserListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		908188022BA34FCF00497258 /* DragonListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragonListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		908188062BA34FCF00497258 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
-		908188102BA34FCF00497258 /* MyUserListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserListUITests.swift; sourceTree = "<group>"; };
-		908188122BA34FCF00497258 /* MyUserListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		908188222BA42E8E00497258 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		908188282BA436AC00497258 /* DragonViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonViewData.swift; sourceTree = "<group>"; };
 		9081882D2BA4656300497258 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -311,9 +309,8 @@
 		908187E32BA34FCD00497258 = {
 			isa = PBXGroup;
 			children = (
-				908187EE2BA34FCD00497258 /* MyUserList */,
-				908188052BA34FCF00497258 /* MyUserListTests */,
-				9081880F2BA34FCF00497258 /* MyUserListUITests */,
+				908187EE2BA34FCD00497258 /* DragonList */,
+				908188052BA34FCF00497258 /* DragonListTests */,
 				908187ED2BA34FCD00497258 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -322,12 +319,12 @@
 			isa = PBXGroup;
 			children = (
 				908187EC2BA34FCD00497258 /* Dragons.app */,
-				908188022BA34FCF00497258 /* MyUserListTests.xctest */,
+				908188022BA34FCF00497258 /* DragonListTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		908187EE2BA34FCD00497258 /* MyUserList */ = {
+		908187EE2BA34FCD00497258 /* DragonList */ = {
 			isa = PBXGroup;
 			children = (
 				5EE21AF72CAEBD8600B8E947 /* Extensions */,
@@ -343,25 +340,16 @@
 				908187F52BA34FCD00497258 /* Main.storyboard */,
 				90B341822BA84D51000DF15E /* Localizable.strings */,
 			);
-			path = MyUserList;
+			path = DragonList;
 			sourceTree = "<group>";
 		};
-		908188052BA34FCF00497258 /* MyUserListTests */ = {
+		908188052BA34FCF00497258 /* DragonListTests */ = {
 			isa = PBXGroup;
 			children = (
 				9025303E2BA8930B007821D3 /* Common */,
 				90B341852BA85A88000DF15E /* Home */,
 			);
-			path = MyUserListTests;
-			sourceTree = "<group>";
-		};
-		9081880F2BA34FCF00497258 /* MyUserListUITests */ = {
-			isa = PBXGroup;
-			children = (
-				908188102BA34FCF00497258 /* MyUserListUITests.swift */,
-				908188122BA34FCF00497258 /* MyUserListUITestsLaunchTests.swift */,
-			);
-			path = MyUserListUITests;
+			path = DragonListTests;
 			sourceTree = "<group>";
 		};
 		908188242BA431FA00497258 /* Presentation */ = {
@@ -412,9 +400,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		908187EB2BA34FCD00497258 /* MyUserList */ = {
+		908187EB2BA34FCD00497258 /* DragonList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 908188162BA34FCF00497258 /* Build configuration list for PBXNativeTarget "MyUserList" */;
+			buildConfigurationList = 908188162BA34FCF00497258 /* Build configuration list for PBXNativeTarget "DragonList" */;
 			buildPhases = (
 				908187E82BA34FCD00497258 /* Sources */,
 				908187E92BA34FCD00497258 /* Frameworks */,
@@ -424,7 +412,7 @@
 			);
 			dependencies = (
 			);
-			name = MyUserList;
+			name = DragonList;
 			packageProductDependencies = (
 				9081882B2BA43BC200497258 /* Kingfisher */,
 				908188302BA46A5200497258 /* Alamofire */,
@@ -436,9 +424,9 @@
 			productReference = 908187EC2BA34FCD00497258 /* Dragons.app */;
 			productType = "com.apple.product-type.application";
 		};
-		908188012BA34FCF00497258 /* MyUserListTests */ = {
+		908188012BA34FCF00497258 /* DragonListTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 908188192BA34FCF00497258 /* Build configuration list for PBXNativeTarget "MyUserListTests" */;
+			buildConfigurationList = 908188192BA34FCF00497258 /* Build configuration list for PBXNativeTarget "DragonListTests" */;
 			buildPhases = (
 				908187FE2BA34FCF00497258 /* Sources */,
 				908187FF2BA34FCF00497258 /* Frameworks */,
@@ -449,13 +437,13 @@
 			dependencies = (
 				908188042BA34FCF00497258 /* PBXTargetDependency */,
 			);
-			name = MyUserListTests;
+			name = DragonListTests;
 			packageProductDependencies = (
 				902530342BA86E82007821D3 /* RxBlocking */,
 				9025303C2BA86E82007821D3 /* RxTest */,
 			);
 			productName = MyUserListTests;
-			productReference = 908188022BA34FCF00497258 /* MyUserListTests.xctest */;
+			productReference = 908188022BA34FCF00497258 /* DragonListTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -477,7 +465,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 908187E72BA34FCD00497258 /* Build configuration list for PBXProject "MyUserList" */;
+			buildConfigurationList = 908187E72BA34FCD00497258 /* Build configuration list for PBXProject "DragonList" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -495,8 +483,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				908187EB2BA34FCD00497258 /* MyUserList */,
-				908188012BA34FCF00497258 /* MyUserListTests */,
+				908187EB2BA34FCD00497258 /* DragonList */,
+				908188012BA34FCF00497258 /* DragonListTests */,
 			);
 		};
 /* End PBXProject section */
@@ -571,7 +559,7 @@
 /* Begin PBXTargetDependency section */
 		908188042BA34FCF00497258 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 908187EB2BA34FCD00497258 /* MyUserList */;
+			target = 908187EB2BA34FCD00497258 /* DragonList */;
 			targetProxy = 908188032BA34FCF00497258 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -735,7 +723,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6RWQYSC5R;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyUserList/Info.plist;
+				INFOPLIST_FILE = DragonList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -764,7 +752,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6RWQYSC5R;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyUserList/Info.plist;
+				INFOPLIST_FILE = DragonList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -827,7 +815,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		908187E72BA34FCD00497258 /* Build configuration list for PBXProject "MyUserList" */ = {
+		908187E72BA34FCD00497258 /* Build configuration list for PBXProject "DragonList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				908188142BA34FCF00497258 /* Debug */,
@@ -836,7 +824,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		908188162BA34FCF00497258 /* Build configuration list for PBXNativeTarget "MyUserList" */ = {
+		908188162BA34FCF00497258 /* Build configuration list for PBXNativeTarget "DragonList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				908188172BA34FCF00497258 /* Debug */,
@@ -845,7 +833,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		908188192BA34FCF00497258 /* Build configuration list for PBXNativeTarget "MyUserListTests" */ = {
+		908188192BA34FCF00497258 /* Build configuration list for PBXNativeTarget "DragonListTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9081881A2BA34FCF00497258 /* Debug */,

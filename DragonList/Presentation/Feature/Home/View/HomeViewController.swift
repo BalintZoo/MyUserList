@@ -5,6 +5,39 @@
 //  Created by Zoltán Bálint on 14.03.2024.
 //
 
+/*
+ At this URL https://api.spacexdata.com/v4/dragons you can get a list of spaceships. You should show the data in a tableView.
+
+ A spaceships has images (flickr_images) and a name. Please display the first image and the name of the spaceships in the cells.
+
+ With every start of the app the data should be loaded. After successful loading of the data the list should be saved offline. The images should not be saved.
+
+  
+
+ So there are three usecases:
+
+ Before you load the data, you have to sign in to a server.  If the authorization has failed but you have saved data for the list, a warning is displayed and the data is shown.
+ The OIDC configuration is placed after the usecases.
+
+ First start of the app: With an existing internet connection the data is displayed in a list. The images are displayed and you can open a detail view. The detail view shows the same data as in the cell with a different layout.
+
+ Second start of the app with a switched off internet connection:  The app displays the saved data. The images are not displayed.
+
+ OIDC
+
+ {
+     "clientID": "zapp_app",
+     "scopes": ["openid"],
+     "redirectURL": "de.evag",
+     "responseType": "code",
+     "useDiscovery": false,
+     "authorizationURL": "https://iam.beta.handyticket.link/realms/ruhrbahn_essen/protocol/openid-connect/auth",
+     "tokenURL": "https://iam.beta.handyticket.link/realms/ruhrbahn_essen/protocol/openid-connect/token",
+     "useIdentityTokenForAuthentication": false
+ }
+ // wenn das nicht funktioniert probiert die clientID "ruhrbahn_app"
+ */
+
 import UIKit
 import RxSwift
 import RxCocoa
